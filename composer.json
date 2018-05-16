@@ -1,0 +1,14 @@
+{
+    "name": "inan/blog",
+    "description": "projet5",
+    "type": "project",
+    "require": {
+        "twig/twig": "^2.4"
+    },
+    "authors": [
+        {
+            "name": "inan",
+            "email": "muhammed-inan@outlook.com"
+        }
+    ]
+}

@@ -17,8 +17,7 @@ function post()
 {
     $postManager = new \OpenClassrooms\Blog\Model\PostManager();
     $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
-   /* $postManager = new PostManager();
-    $commentManager = new CommentManager();*/
+
 
     $post = $postManager->getPost($_GET['id']);
     $comments = $commentManager->getComments($_GET['id']);
