@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16fba778-897a-415f-94b1-f80f4f5a4cd9" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UML/SequenceDiagramadmin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UML/Sequenceconfirme.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UML/Sequenceconsulte.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UML/Sequenceutilisateur.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UML/diagrammeclasse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UML/packaget.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UML/seqconnection.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UML/usecase admin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UML/usecase contact.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UML/usecase sign.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/controller/SecurityController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/model/SecurityManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/controller/frontend.php" beforeDir="false" afterPath="$PROJECT_DIR$/home/controller/frontend.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,10 +22,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SecurityManager.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SecurityManager.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/home/model/SecurityManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="-153">
               <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
             </state>
           </provider>
@@ -98,7 +82,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SecurityController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SecurityController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/home/controller/SecurityController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
@@ -227,15 +211,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1525866544154</updated>
-      <workItem from="1525866545579" duration="5154000" />
+      <workItem from="1525866545579" duration="6336000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5154000" />
+    <option name="totallyTimeSpent" value="6336000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22236504" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -305,13 +289,6 @@
         <state relative-caret-position="-306" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home/controller/SecurityController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/home/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -321,8 +298,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/home/model/SecurityManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
+        <state relative-caret-position="-153">
           <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/controller/SecurityController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
