@@ -39,5 +39,4 @@ function addComment($postId, $author, $comment)
         header('Location: index.php?action=post&id=' . $postId);
     }
 }
-
-?>
+ /*test*/
