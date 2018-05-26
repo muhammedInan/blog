@@ -10,5 +10,12 @@
             "name": "inan",
             "email": "muhammed-inan@outlook.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "Components\\": "components/",
+            "Controller\\": "home/controller/",
+            "Model\\": "home/model/"
+        }
+    }
 }

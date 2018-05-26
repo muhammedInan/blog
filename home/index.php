@@ -1,37 +1,23 @@
 <?php
-require('controller/frontend.php');
 
-try {
-    if (isset($_GET['action'])) {
-        if ($_GET['action'] == 'listPosts') {
-            listPosts();
-        }
-        elseif ($_GET['action'] == 'post') {
-            if (isset($_GET['id']) && $_GET['id'] > 0) {
-                post();
-            }
-            else {
-                throw new Exception('Aucun identifiant de billet envoyé');
-            }
-        }
-        elseif ($_GET['action'] == 'addComment') {
-            if (isset($_GET['id']) && $_GET['id'] > 0) {
-                if (!empty($_POST['author']) && !empty($_POST['comment'])) {
-                    addComment($_GET['id'], $_POST['author'], $_POST['comment']);
-                }
-                else {
-                    throw new Exception('Tous les champs ne sont pas remplis !');
-                }
-            }
-            else {
-                throw new Exception('Aucun identifiant de billet envoyé');
-            }
-        }
+require_once "../vendor/autoload.php";
+
+$class = "Controller\\" . (isset($_GET['c']) ? ucfirst($_GET['c']) . 'Controller' : 'IndexController');
+$target = isset($_GET['t']) ? $_GET['t'] : "index";
+$getParams = isset($_GET['params']) ? $_GET['params'] : null;
+$postParams = isset($_POST['params']) ? $_POST['params'] : null;
+$params = [
+    "get"  => $getParams,
+    "post" => $postParams
+];
+
+if (class_exists($class, true)) {
+  die('ok');  $class = new $class();
+    if (in_array($target, get_class_methods($class))) {
+        call_user_func_array([$class, $target], $params);
+    } else {
+        call_user_func([$class, "index"]);
     }
-    else {
-        listPosts();
-    }
-}
-catch(Exception $e) {
-    echo 'Erreur : ' . $e->getMessage();
+} else {
+    echo "404 - Error";
 }

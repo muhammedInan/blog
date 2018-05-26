@@ -1,9 +1,9 @@
 <?php
 /*class PostManager*/
-namespace Model;
+namespace OpenClassrooms\Blog\Model;
 require_once("model/Manager.php");
 
-class PostManager extends Manager
+class PostAdmin extends Manager
 {
     public function getPosts()
     {
@@ -23,6 +23,16 @@ class PostManager extends Manager
         return $post;
     }
 
+    public function postBlog($userId, $title, $content)
+    {
+        $db = $this->dbConnect();
+            $req = $db->prepare('INSERT INTO posts(user_id, title, content, creation_date) VALUES(?, ?, ?, NOW())');
+            $affectedLines = $req->execute(array($userId, $title, $content));
+    var_dump($affectedLines);
+    die;
+        return $affectedLines;
+    }
 
-   
+
+
 }
