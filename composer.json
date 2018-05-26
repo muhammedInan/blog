@@ -1,21 +1,20 @@
 {
-    "name": "inan/blog",
-    "description": "projet5",
+    "name": "win10/blog",
     "type": "project",
-    "require": {
-        "twig/twig": "^2.4"
-    },
     "authors": [
         {
             "name": "inan",
             "email": "muhammed-inan@outlook.com"
         }
     ],
+    "require": {
+        "twig/twig": "^2.4"
+    },
     "autoload": {
         "psr-4": {
             "Components\\": "components/",
-            "Controller\\": "home/controller/",
-            "Model\\": "home/model/"
+            "Controllers\\": "controller/",
+            "Models\\": "model/"
         }
     }
 }
