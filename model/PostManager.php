@@ -25,6 +25,8 @@ class PostManager extends Manager
         return $post;
     }
 
+
+
     public function deletePost($postId)
     {
         $db = $this->dbConnect();
@@ -32,6 +34,13 @@ class PostManager extends Manager
         $req->execute(array('post_id' => $postId) );
 
 
+    }
+
+    public function updatePost($postId)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare(' UPDATE posts set id = ? WHERE id = :post_id');
+        $req->execute(array('post_id' => $postId) );
     }
 
 

@@ -5,6 +5,7 @@
     {{ post.title }}
     {{ post.creation_date_fr }}
         <a href="index.php?c=post&t=deletePost&params[postId]={{ post.id }}">DELETE</a>
+    <a href="'index.php?c=post&t=updatePost&params[postId]={{ post.id }}">UPDATE</a>
 
 
 {% endblock %}

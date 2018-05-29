@@ -16,6 +16,7 @@ class CommentManager extends Manager
 
         return $comments;
     }
+    /*http://127.0.0.1/blog2/index.php?c=comment&t=addComment&params[postId]=2*/
 
     public function postComment($postId, $author, $comment)
     {
@@ -27,5 +28,19 @@ class CommentManager extends Manager
         return $affectedLines;
     }
 
-   
+    public function confirmComment($id, $valider)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('UPDATE comments SET publication = :valider WHERE id = :id'); //On valide le commentaire)
+        $req->execute(array(
+            'id'=>$id,
+            'valider' =>$valider
+        ));
+
+
+    }
+
+
+
+
 }

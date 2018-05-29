@@ -10,5 +10,5 @@ return array(
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Models\\' => array($baseDir . '/model'),
     'Controllers\\' => array($baseDir . '/controller'),
-    'Components\\' => array($baseDir . '/components'),
+    'Components\\' => array($baseDir . '/component'),
 );

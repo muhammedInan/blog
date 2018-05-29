@@ -25,3 +25,21 @@ class CommentController extends Controller
 
     }
 }
+
+function validComment($id)
+{
+    if (isset($_POST['valider'])) // Si on demande de valider un commentaire
+    {
+        // Alors on valide le commentaire correspondant
+        // On protège la variable "valider" pour éviter une faille SQL
+        $_POST['valider'] = htmlspecialchars($_POST['valider']);
+        $commentManager = new \Models\CommentManager();
+        $commentManager->confirmComment($id , $_POST['valider']);
+
+
+    }
+    echo $this->twig->render(name: 'comment/valid.html.twig',array(
+        'comment_id'=>$id,
+));
+}
+

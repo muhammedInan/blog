@@ -24,12 +24,7 @@ class PostController extends Controller
    {
        $postManager = new \Models\PostManager();
 
-
-
        if (!empty($postId)) {
-
-
-
 
            $postManager->deletePost($postId);
        }
@@ -37,6 +32,17 @@ class PostController extends Controller
        //echo $this->twig->render('comment/add.html.twig');
 
    }
+
+   public function updatePost($postId)
+{
+    $postManager = new \Models\PostManager();
+
+    if (!empty($postId)) {
+
+        $postManager->updatePost($postId);
+    }
+
+}
 
    public function showPost($postId)
    {

@@ -1,5 +1,5 @@
 {
-    "name": "win10/blog",
+    "name": "win10/blog2",
     "type": "project",
     "authors": [
         {
@@ -12,7 +12,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Components\\": "components/",
+            "Components\\": "component/",
             "Controllers\\": "controller/",
             "Models\\": "model/"
         }
