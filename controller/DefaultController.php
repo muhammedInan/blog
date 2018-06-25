@@ -13,7 +13,7 @@ class DefaultController extends Controller
 {
 
     /**
-     *
+     *function home for display home page and it send the file index for this
      * @throws \Twig_Error_Loader
      * @throws \Twig_Error_Runtime
      * @throws \Twig_Error_Syntax
@@ -22,5 +22,11 @@ class DefaultController extends Controller
     {
         echo $this->twig->render('index.html.twig');
     }
-}
 
+
+    public function contact()
+    {
+        echo $this->twig->render('contact.twig', ['name' => 'Marc', 'email' => 'demo@demo.fr']);
+    }
+
+}

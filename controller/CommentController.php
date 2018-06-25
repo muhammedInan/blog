@@ -10,6 +10,7 @@ namespace Controllers;
 
 class CommentController extends Controller
 {
+    /**this function allows of add comment with params PostId*/
     function addComment($postId )
     {
 
@@ -28,17 +29,17 @@ class CommentController extends Controller
 
 function validComment($id)
 {
-    if (isset($_POST['valider'])) // Si on demande de valider un commentaire
+    if (isset($_POST['valider'])) //if we request valid a comment
     {
-        // Alors on valide le commentaire correspondant
-        // On protège la variable "valider" pour éviter une faille SQL
+        //  so we valid the comment corresponding
+        // we protected the "valid" variable for to avoid a error SQL
         $_POST['valider'] = htmlspecialchars($_POST['valider']);
         $commentManager = new \Models\CommentManager();
         $commentManager->confirmComment($id , $_POST['valider']);
 
 
     }
-    echo $this->twig->render(name: 'comment/valid.html.twig',array(
+    echo $this->twig->render( 'comment/valid.html.twig',array(
         'comment_id'=>$id,
 ));
 }

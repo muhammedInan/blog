@@ -31,7 +31,7 @@ class CommentManager extends Manager
     public function confirmComment($id, $valider)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('UPDATE comments SET publication = :valider WHERE id = :id'); //On valide le commentaire)
+        $req = $db->prepare('UPDATE comments SET publication = :valider WHERE id = :id'); //we valid the comments)
         $req->execute(array(
             'id'=>$id,
             'valider' =>$valider

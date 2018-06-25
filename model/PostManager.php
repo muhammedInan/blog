@@ -1,5 +1,4 @@
 <?php
-/*class PostManager*/
 namespace Models;
 
 
@@ -23,6 +22,13 @@ class PostManager extends Manager
         $post = $req->fetch(\PDO::FETCH_ASSOC);
 
         return $post;
+    }
+
+    public function addPost($title, $content, $userId)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare(' INSERT INTO `posts`(`title`, `content`, `creation_date`, `user_id`) VALUES ( ?, ?,NOW(),?) ');
+        $req->execute(array( $title, $content, $userId));
     }
 
 

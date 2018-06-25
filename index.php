@@ -25,20 +25,22 @@ if (isset($_GET['c']) && isset($_GET['t'])) {
 
     $controller = new Controller();
    // $controller->twig->render('error/404.html.twig');
-    echo '404';
+echo '404';
 }
-else
-{
+
+
+else {
     $class = 'Controllers\\DefaultController';
     $target = 'home';
-
 
 
     if (class_exists($class, true)) {
         $class = new $class();
         if (in_array($target, get_class_methods($class))) {
-            call_user_func_array([$class, $target],array());
+            call_user_func_array([$class, $target], array());
             exit();
         }
     }
+
+
 }
