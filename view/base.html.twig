@@ -2,23 +2,74 @@
 <html lang="en">
 <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <title> Blog</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/style.css.twig">
 
-    <title>Hello, world!</title>
+
 </head>
 <body>
-    <div class="container">
-        {% block body %}{% endblock %}
-    </div>
 
-<!-- Optional JavaScript -->
+<nav class="navbar navbar-default navbar-fixed-top">
+
+    <div class="container">
+        <h1> Blog </h1>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="/blog2/?c=post&t=listPosts">Liste d'article</a></li>
+                <li><a href="/blog2/?c=post&t=updatePost&params[postId]"> modifier</a></li>
+                <li><a href="/blog2/?c=post&t=deletePost&params[postId]">Supprimer</a></li>
+                <li><a href="/blog2/?c=security&t=register">inscription</a></li>
+                <li> <a href="/blog2/?c=security&t=login">connexion</a></li>
+                <li class="nav-item  contact ">
+                    <a href="/blog2/?c=default&t=contact" class="nav-link">Contact</a>
+                <li> <a href="/blog2/?c=security&t=logout">deconnexion</a></li>
+                <li> <a href="/blog2/?c=post&t=addPost">Ajout</a></li>
+                <li> <a href="/blog2/">Accueil</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section  class="wrapper">
+
+
+        {% block body %}{% endblock %}
+</section>
+    <footer class="text-center">
+        <a href="accueil">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+        <h5> 2018 Tous droits réservés- Politique de conidentialité</h5>
+        <h6>Contactez-nous</h6>
+    </footer>
+
+
+
+
+        <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
 </body>
 </html>

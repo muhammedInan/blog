@@ -45,12 +45,32 @@ class SecurityController extends Controller
 
     }
 
+    /**
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Runtime
+     * @throws \Twig_Error_Syntax
+     */
     public function profile()
     {
-        echo $this->twig->render('security/profile.html.twig', array(
+
+        $session = $this->getSession();
+        if ($session->getUser() !== null )
+            echo $this->twig->render('security/profile.html.twig', array(
             'user' => $this->getUser(),
-        ));
+            ));
+
+        else
+            echo $this->twig->render('404.html.twig');
+
     }
+
+    public function logout()
+    {
+        $session = $this->getSession();
+        $session->destroy();
+        return $this->generateUrlRedirection('security', 'login');
+    }
+
 
 
 

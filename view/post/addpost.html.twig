@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% import 'form.twig' as form %}
+
+{% block body %}
+    <h1>Me contacter</h1>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt magni molestias pariatur quod unde! Ab ad et fugiat illum iste nam numquam perspiciatis possimus, quam rem sunt veniam voluptate voluptatibus.</p>
+    <form  method="post">
+        <div class="row">
+            {{ form.input('title', 'le titre', '', {class: 'col-xs'}) }}
+
+        </div>
+        {{ form.textarea('content', 'contenu') }}
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+        </div>
+    </form>
+{% endblock %}
