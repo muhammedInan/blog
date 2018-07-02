@@ -18,14 +18,18 @@ class SecurityController extends Controller
             if (password_verify($_POST['password'], $user['password'])) {
                 $session = $this->getSession();
                 $session->setUser($user);
+                $this->addFlash('success','vous êtes bien authentifier');
+
+
 
                 return $this->generateUrlRedirection('security', 'profile');
 
 
             }
+            $this->addFlash('danger','votre mot de passe  ou votre login sont  incorrect' );
         }
 
-        echo $this->twig->render('security/login.html.twig', array(
+        return $this->render('security/login.html.twig', array(
             'token' => $this->generateToken(),
         ));
     }
@@ -39,7 +43,7 @@ class SecurityController extends Controller
             return $this->generateUrlRedirection('security', 'login');
         }
 
-        echo $this->twig->render('security/register.html.twig', array(
+        return $this->render('security/register.html.twig', array(
             'token' => $this->generateToken(),
         ));
 
@@ -55,12 +59,12 @@ class SecurityController extends Controller
 
         $session = $this->getSession();
         if ($session->getUser() !== null )
-            echo $this->twig->render('security/profile.html.twig', array(
+            return $this->render('security/profile.html.twig', array(
             'user' => $this->getUser(),
             ));
 
         else
-            echo $this->twig->render('404.html.twig');
+            return $this->render('404.html.twig');
 
     }
 
@@ -70,6 +74,7 @@ class SecurityController extends Controller
         $session->destroy();
         return $this->generateUrlRedirection('security', 'login');
     }
+
 
 
 
