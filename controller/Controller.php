@@ -14,18 +14,30 @@ use Components\Session;
 
 class Controller
 {
-    protected $twig;
 
-    function __construct()
+  public function clearflash()
+  {
+      $this->getSession()->setFlash(null);
+
+  }
+    public function render($view,$parameters = array())
     {
         // Twig Configuration
         $loader = new Twig_Loader_Filesystem('./view/');
-        $this->twig = new Twig_Environment($loader, array(
+        $content = new Twig_Environment($loader, array(
             'cache' => false,
         ));
+        $flash = $this->getSession()->getFlash();
+        if ($flash && $flash['status'] == false) {
 
+            $parameters['flash'] = $flash;
+            $flash['status'] = true;
+            $this->getSession()->setFlash($flash);
+        }
         //
+        echo $content->render($view,$parameters);
     }
+
     public function getSession()
     {
         return Session::getSession();
@@ -35,9 +47,25 @@ class Controller
     {
         return $this->getSession()->getUser();
     }
+    public function addFlash($code,$message,$status=false)
+    {
+        $flash = array (
+            'code' => $code,
+            'message' => $message,
+            'status' => $status,
+        );
+       if ($this->getSession()->setFlash($flash)) {
+
+           return true;
+       }
+       else
+           return false;
+    }
+
 
     public function generateUrlRedirection(string $controller, string $method, array $getParameters = array())
     {
+
         $url = 'index.php?c='.$controller.'&t='.$method;
         foreach ($getParameters as $key => $value) {
             $url .= '&params['.$key.']='.$value;

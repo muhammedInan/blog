@@ -17,7 +17,7 @@ class PostManager extends Manager
     public function getPost($postId)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM posts WHERE id = ?');
+        $req = $db->prepare('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr, user_id FROM posts WHERE id = ?');
         $req->execute(array($postId));
         $post = $req->fetch(\PDO::FETCH_ASSOC);
 
@@ -42,11 +42,16 @@ class PostManager extends Manager
 
     }
 
-    public function updatePost($postId)
+    public function updatePost($postId,$title,$content)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare(' UPDATE posts set id = ? WHERE id = :post_id');
-        $req->execute(array('post_id' => $postId) );
+        $req = $db->prepare(' UPDATE posts set title = :title , content = :content WHERE id = :post_id');
+        $req->execute(array(
+            'post_id' => $postId,
+            'title' => $title,
+            'content' =>$content,
+        ) );
+
     }
 
 

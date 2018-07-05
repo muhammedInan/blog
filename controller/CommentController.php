@@ -22,7 +22,7 @@ class CommentController extends Controller
              $commentManager->postComment($postId, 1, $_POST['content']);
         }
 
-            echo $this->twig->render('comment/add.html.twig');
+            return $this->render('comment/add.html.twig');
 
     }
 }
@@ -39,7 +39,7 @@ function validComment($id)
 
 
     }
-    echo $this->twig->render( 'comment/valid.html.twig',array(
+    return $this->render( 'comment/valid.html.twig',array(
         'comment_id'=>$id,
 ));
 }

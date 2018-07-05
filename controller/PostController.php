@@ -2,7 +2,7 @@
 
 
 namespace Controllers;
-
+use Components\Session;
 /* the class PostController it's concerned the part post*/
 
 class PostController extends Controller
@@ -16,7 +16,7 @@ class PostController extends Controller
 
 
 
-         echo $this->twig->render('post/listPosts.html.twig', array(
+         return $this->render('post/listPosts.html.twig', array(
            'posts' => $posts,
            ));
 
@@ -25,62 +25,82 @@ class PostController extends Controller
     public function addPost()
     {
 
-        $session = $this->getSession();
-        $user = $session->getUser();
-        if ($user !== null ) {
-            if ('POST' === $_SERVER['REQUEST_METHOD']) {
-                $postManager = new \Models\PostManager();
-                $postManager->addPost($_POST['title'], $_POST['content'],$user['id'] );
+        $user = Session::getSession();
+        $user = $this->getUser();
+        $postManager = new \Models\PostManager();
+
+
+        if (isset ($user) ) {
+            if ('POST' === $_SERVER['REQUEST_METHOD'] && $this->verifyToken($_POST['token']))  {
+
+                $postManager->addPost($_POST['title'], $_POST['content'],$user['id']);
 
             }
 
-            echo $this->twig->render('post/addpost.html.twig', array(
-                'user' => $this->getUser(),
+            return $this->render('post/addpost.html.twig', array(
+                'token' => $this->generateToken(),
             ));
+              //  $postManager->addPost($_POST['title'], $_POST['content'],$user['id'] );
+
+          //  }
+
+          //  return $this->render('post/addpost.html.twig', array(
+              //  'user' => $this->getUser(),
+          //  ));
         }
         else {
-            echo $this->twig->render('error/403.html.twig');
+            return $this->render('error/403.html.twig');
         }
     }
 
     /**function deletePost it's for delete a post */
-   public function deletePost($postId)
+   public function deletePost($params)
    {
+       print_r($params);
        $postManager = new \Models\PostManager();
 
-       if (!empty($postId)) {
+       if ('GET' === $_SERVER['REQUEST_METHOD'] && $this->verifyToken($params['token'])) {
+           if (!empty ($params['postId'])) {
 
-           $postManager->deletePost($postId);
+               $postManager->deletePost($params['postId']);
+           }
+           $session = $this->getSession();
+           if ($session->getUser() !== null)
+               return $this->render('security/profile.html.twig', array(
+                   'user' => $this->getUser(),
+
+               ));
+
+           else
+               return $this->render('404.html.twig');
+
        }
-       $session = $this->getSession();
-       if ($session->getUser() !== null )
-           echo $this->twig->render('security/profile.html.twig', array(
-               'user' => $this->getUser(),
-           ));
-
-       else
-           echo $this->twig->render('404.html.twig');
-
-
-
    }
+
+
 
    public function updatePost($postId)
 {
+
+    $user = $this->getUser();
     $postManager = new \Models\PostManager();
+    $post = $postManager->getPost($postId);
 
-    if (!empty($postId)) {
+    if ($user['id'] == $post['user_id'] ) {
+        if ('POST' === $_SERVER['REQUEST_METHOD'] && $this->verifyToken($_POST['token']))  {
 
-        $postManager->updatePost($postId);
-    }
-    $session = $this->getSession();
-    if ($session->getUser() !== null )
-        echo $this->twig->render('security/profile.html.twig', array(
-            'user' => $this->getUser(),
+            $postManager->updatePost($postId,$_POST['title'], $_POST['content'] );
+
+        }
+
+        return $this->render('post/updatepost.html.twig', array(
+            'post' => $post,
+            'token' => $this->generateToken(),
         ));
-
-    else
-        echo $this->twig->render('404.html.twig');
+    }
+    else {
+        return $this->render('error/403.html.twig');
+    }
 
 }
 /** this function allows display  update post , add post , and comment */
@@ -91,8 +111,9 @@ class PostController extends Controller
        $commentManager = new \Models\CommentManager();
        $comments = $commentManager->getComments($postId);
 
-        echo $this->twig->render('post/show.html.twig', array(
-       'post' => $post, 'comments' =>$comments
+        return $this->render('post/show.html.twig', array(
+       'post' => $post, 'comments' =>$comments,
+            'token' => $this->generateToken(),
    ));
    }
 }

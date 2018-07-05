@@ -20,13 +20,13 @@ class DefaultController extends Controller
      */
     public function home()
     {
-        echo $this->twig->render('index.html.twig');
+        return $this->render('index.html.twig');
     }
 
 
     public function contact()
     {
-        echo $this->twig->render('contact.twig', ['name' => 'Marc', 'email' => 'demo@demo.fr']);
+        return $this->render('contact.twig', ['name' => 'Marc', 'email' => 'demo@demo.fr']);
     }
 
 }

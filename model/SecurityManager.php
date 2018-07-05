@@ -12,6 +12,7 @@ class SecurityManager extends Manager
         $req->execute(array(
             'login'=>$login,
 
+
         ));
         return $req->fetch();
 

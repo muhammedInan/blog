@@ -51,8 +51,11 @@
 </nav>
 <section  class="wrapper">
 
-
+{% if (flash)%}
+    {{ flash.message }}
+{% endif %}
         {% block body %}{% endblock %}
+
 </section>
     <footer class="text-center">
         <a href="accueil">
