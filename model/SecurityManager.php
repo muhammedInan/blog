@@ -3,7 +3,7 @@
 namespace Models;
 
 
-class SecurityManager extends Manager
+class SecurityManager extends Database
 {
     public function verifyUser($login)
     {

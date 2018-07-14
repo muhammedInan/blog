@@ -15,7 +15,7 @@ class SecurityController extends Controller
             $securityManager = new \Models\SecurityManager();
             $user =  $securityManager->verifyUser($_POST['login']);
 
-            if (password_verify($_POST['password'], $user['password'])) {
+            if (password_verify($_POST['password'], $user->password)) {
                 $session = $this->getSession();
                 $session->setUser($user);
                 $this->addFlash('success','vous êtes bien authentifier');

@@ -1,14 +1,14 @@
 <?php
 namespace Models;
 
-
-class PostManager extends Manager
+use Models\Entity\Post;
+class PostManager extends Database
 {
     public function getPosts()
     {
         $db = $this->dbConnect();
         $req = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM posts ORDER BY creation_date DESC LIMIT 0, 5');
-        $posts = $req->fetchAll(\PDO::FETCH_ASSOC);
+        $posts = $req->fetchAll();
 
         return $posts;
 
@@ -19,16 +19,21 @@ class PostManager extends Manager
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr, user_id FROM posts WHERE id = ?');
         $req->execute(array($postId));
-        $post = $req->fetch(\PDO::FETCH_ASSOC);
+        $post = $req->fetch();
 
         return $post;
     }
 
-    public function addPost($title, $content, $userId)
+    public function addPost(Post $post)
     {
+
         $db = $this->dbConnect();
         $req = $db->prepare(' INSERT INTO `posts`(`title`, `content`, `creation_date`, `user_id`) VALUES ( ?, ?,NOW(),?) ');
-        $req->execute(array( $title, $content, $userId));
+        $req->execute(array(
+            $post->getTitle(),
+            $post->getContent(),
+            $post->getUserId(),
+        ));
     }
 
 

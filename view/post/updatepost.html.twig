@@ -7,12 +7,12 @@
 
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt magni molestias pariatur quod unde! Ab ad et fugiat illum iste nam numquam perspiciatis possimus, quam rem sunt veniam voluptate voluptatibus.</p>
     <form  method="post">
-        <input type="hidden" name="token" value="{{ token }}">
+        <input type="hidden" name="params['token']" value="{{ token }}">
         <div class="row">
-            {{ form.input('title', 'le titre', post.title, {class: 'col-xs'}) }}
+            {{ form.input('params["title"]', 'le titre', post.title, {class: 'col-xs'}) }}
 
         </div>
-        {{ form.textarea('content', 'contenu',post.content) }}
+        {{ form.textarea('params["content"]', 'contenu',post.content) }}
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Envoyer</button>
         </div>

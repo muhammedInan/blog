@@ -4,9 +4,21 @@
 {{ post.content }}
     {{ post.title }}
     {{ post.creation_date_fr }}
+
         <a href="index.php?c=post&t=deletePost&params[postId]={{ post.id }}&params[token]={{token}}">DELETE</a>
     <a href="index.php?c=post&t=updatePost&params[postId]={{ post.id }}">UPDATE</a>
     <a href="index.php?c=comment&t=addComment&params[postId]={{ post.id }}">commentaire</a>
+    <form method="POST">
+        <div class="form-group ">
+            <textarea name="comment_content"> </textarea>
+            <input type="hidden" name="params['token']" value="{{ token }}">
+            {{ form.input('author', 'auteur', comments.author, {class: 'col-xs'}) }}
+
+        </div>
+        {{ form.textarea('comment', 'ccommentaire',comments.comment) }}
+        <button type="submit" class="btn btn-primary">valider</button>
+    </form>
+
     {% for comment in comments %}
     {{ comment.comment }}
     {% endfor %}
