@@ -4,9 +4,10 @@
 
     {% for post in posts %}
         {{ post.creation_date_fr }}
+       {{ post.getUser().getUsername()}}
         <div class="card" style="width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title">{{ post.title }}</h5>
+                <h5 class="card-title">{{post.getTitle() }}</h5>
                 <p class="card-text">{{ post.content }}</p>
                 <a href="index.php?c=post&t=showPost&params[postId]={{ post.id }}" class="add">lire la suite</a>
 

@@ -11,11 +11,11 @@ namespace Models\entity;
 
 class Media
 {
-  protected $id,
-            $name,
-            $file,
-            $postId,
-            $type,
+  protected $id;
+            $name;
+            $file;
+            $postId;
+            $type;
 
 
      public function __construct($valeurs = [])
@@ -34,18 +34,16 @@ class Media
         */
   public function hydrate($donnees)
   {
-      foreach ($donnees as $attribut => $valeur)
-      {
-          $methode = 'set'.ucfirst($attribut);
+      foreach ($donnees as $attribut => $valeur) {
+          $methode = 'set' . ucfirst($attribut);
 
-          if (is_callable([$this, $methode]))
-          {
+          if (is_callable([$this, $methode])) {
               $this->$methode($valeur);
           }
       }
+
+
   }
-
-
 
    // SETTERS //
 
@@ -90,23 +88,23 @@ class Media
 
     public function getName()
     {
-        return $this->postId;
+        return $this->name;
     }
 
     public function getFile()
     {
-        return $this->comment;
+        return $this->file;
     }
 
     public function getPostId()
     {
-        return $this->commentDate;
+        return $this->postId;
     }
 
     public function getType()
     {
-        return $this->userId;
+        return $this->type;
     }
-}
+
 
 }

@@ -6,7 +6,7 @@
  * Time: 17:01
  */
 
-namespace Models\entity;
+namespace Models\Entity;
 
 
 class Comment
@@ -21,6 +21,7 @@ class Comment
 
     public function __construct($valeurs = [])
     {
+        $valeurs['commentDate']= date('Y-m-d');
         //if specified the values then we hydrate object
         if (!empty($valeurs)) {
             $this->hydrate($valeurs);
@@ -58,29 +59,27 @@ class Comment
         $this->postId = $postId;
     }
 
+ public function setAuthor($author)
+ {
+     $this->author = $author;
+ }
 
-    public function setAuthor($author)
-    {
-        if (!is_string($author) || empty($author)) {
-            $this->erreurs[] = self::AUTEUR_INVALIDE;
-        } else {
-            $this->author = $author;
-        }
-    }
+ public function setComment($comment)
+ {
+     $this->comment = $comment;
+ }
 
-    public function setComment($comment)
-    {
-        if (!is_string($comment) || empty($coment)) {
-            $this->erreurs[] = self::CONTENU_INVALIDE;
-        } else {
-            $this->comment = $comment;
-        }
-    }
 
-    public function setCommentDate(\DateTime $commentDate)
+    public function setCommentDate($commentDate)
     {
         $this->commentDate = $commentDate;
     }
+
+    public function setPublished($published)
+    {
+        $this->published = $published;
+    }
+
 
     // GETTERS //
     public function getId()
@@ -103,11 +102,16 @@ class Comment
         return $this->commentDate;
     }
 
-    public function getUserId()
+    public function getAuthor()
     {
-        return $this->userId;
+        return $this->author;
     }
-}
+    public function getPublished()
+    {
+        return $this->published;
+    }
+
+
 
 
 

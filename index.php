@@ -33,9 +33,9 @@ echo '404';
 else {
     $class = 'Controllers\\DefaultController';
     $target = 'home';
-    $post = (isset($_POST['params'])) ? $_POST['params'] : array();
-    $get = (isset($_GET['params'])) ? $_GET['params'] : array();
-    $params = array_merge($get, $post);
+
+    $params = (isset($_GET['params'])) ? $_GET['params'] : array();
+
 
     if (class_exists($class, true)) {
         $class = new $class();

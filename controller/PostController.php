@@ -5,6 +5,7 @@ namespace Controllers;
 use Components\Session;
 use Models\Entity\Post;
 use Models\PostManager;
+use Models\Entity\Comment;
 /* the class PostController it's concerned the part post*/
 
 class PostController extends Controller
@@ -13,6 +14,8 @@ class PostController extends Controller
     public function listPosts()
     {
          $postManager = new PostManager();
+
+
 
         $posts = $postManager->getPosts(); //  function call o this object
 
@@ -40,6 +43,9 @@ class PostController extends Controller
                 'userId' => $user->id,
 
             ]);
+$post =  new Post ($_POST);
+$post -> setUser($user);
+
 
 
                 $postManager->addPost($post);
@@ -60,29 +66,41 @@ class PostController extends Controller
    public function deletePost($postId,$token)
    {
 
+       $session = $this->getSession();
+       if ($session->getUser() !== null)
+
        $postManager = new PostManager();
+       {
+       if (!empty ($postId)) {
+           if ('GET' === $_SERVER['REQUEST_METHOD'] && $this->verifyToken($_POST['token'])) {
 
-       if ('GET' === $_SERVER['REQUEST_METHOD'] && $this->verifyToken($token)) {
-           if (!empty ($postId)) {
 
-               $postManager->deletePost($postId);
+               $post = new Post([
+                   'id' => $_POST['id'],
+                   'user' => $session ->getUser(),
+
+
+               ]);
+
+               $postManager->deletePost($post);
            }
-           $session = $this->getSession();
-           if ($session->getUser() !== null)
-               return $this->render('security/profile.html.twig', array(
-                   'user' => $this->getUser(),
 
-               ));
 
-           else
-               return $this->render('404.html.twig');
+           return $this->render('security/profile.html.twig', array(
+               'user' => $this->getUser(),
+
+           ));
+       }
+       else
+           return $this->render('404.html.twig');
+       }
 
        }
-   }
 
 
 
-   public function updatePost($postId,$token=null,$title=null,$content=null)
+
+   public function updatePost($postId)
 {
 
     $user = $this->getUser();
@@ -90,10 +108,18 @@ class PostController extends Controller
     $post = $postManager->getPost($postId);
 
     if ($user->id == $post->user_id ) {
-        if ('POST' === $_SERVER['REQUEST_METHOD'] && $this->verifyToken($token))  {
-            var_dump($post);
+        if ('POST' === $_SERVER['REQUEST_METHOD'] && $this->verifyToken($_POST['token']))  {
+            $post = new Post([
+                'title' =>$_POST['title'],
+                'content' =>$_POST['content'],
+                'userId' => $user->id,
 
-            $postManager->updatePost($postId,$title,$content );
+            ]);
+
+
+            $postManager->updatePost($post);
+
+
 
         }
 
@@ -108,26 +134,37 @@ class PostController extends Controller
 
 }
 /** this function allows display  update post , add post , and comment */
-   public function showPost($postId,$author,$comment_content=null,$token=null)
+   public function showPost($postId)
    {
+
        $user = $this->getUser();
        $postManager = new PostManager();
        $post = $postManager->getPost($postId);
        $commentManager = new \Models\CommentManager();
-       $comments = $commentManager->getComments($postId);
-       if (!empty($comment_content)) {
+
+       if ('POST' === $_SERVER['REQUEST_METHOD'] && $this->verifyToken($_POST['token']))  {
+
+           $comment = new Comment([
+               'postId' => $postId,
+               'author' => $user->id,
+               'comment' => $_POST['comment_content'],
+               'published' => true,
+
+           ]);
 
 
-           $commentManager = new \Models\CommentManager();
 
-           $commentManager->postComment($postId,$user,$author,$comment_content);
+
+           $commentManager->postComment($comment);
            return $this->generateUrlRedirection('post', 'showPost',array(
                'postId'=> $postId,
 
            ));
        }
+       $comments = $commentManager->getComments($postId);
         return $this->render('post/show.html.twig', array(
-       'post' => $post, 'comments' =>$comments,
+            'post' => $post,
+            'comments' =>$comments,
             'token' => $this->generateToken(),
    ));
    }

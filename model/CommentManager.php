@@ -1,7 +1,7 @@
 <?php
 /*class CommentManager*/
 namespace Models;
-
+use Models\Entity\Comment;
 
 
 
@@ -18,11 +18,17 @@ class CommentManager extends Database
     }
 
 
-    public function postComment($postId, $author, $comment)
+    public function postComment(Comment $comment)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('INSERT INTO comments(post_id, author, comment, comment_date) VALUES(?, ?, ?, NOW())');
-        $affectedLines = $req->execute(array($postId, $author->id, $comment));
+        $req = $db->prepare('INSERT INTO comments(post_id, author, comment, comment_date , published) VALUES(?, ?, ?, ?, ?)');
+        $affectedLines = $req->execute(array(
+            $comment -> getPostId(),
+            $comment->getAuthor(),
+            $comment->getComment(),
+            $comment->getCommentDate(),
+            $comment->getPublished(),
+        ));
 
 
         return $affectedLines;

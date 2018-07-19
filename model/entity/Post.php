@@ -15,7 +15,7 @@ namespace Models\Entity;
             protected   $title;
             protected  $content;
             protected  $creationDate;
-            protected  $userId;
+            protected  $user;
 
 
 
@@ -85,9 +85,9 @@ namespace Models\Entity;
       $this->creationDate = $creationDate;
   }
 
-public function setUserId($userId)
+public function setUser($user)
 {
-    $this->userId = $userId;
+    $this->user = $user;
 }
 
   // GETTERS //
@@ -111,9 +111,9 @@ public function setUserId($userId)
       return $this->creationDate;
   }
 
-  public function getUserId()
+  public function getUser()
   {
-      return $this->userId;
+      return $this->user;
   }
 
 

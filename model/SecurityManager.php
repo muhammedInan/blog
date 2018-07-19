@@ -12,7 +12,7 @@ class SecurityManager extends Database
         $req->execute(array(
             'login'=>$login,
 
-
+            $req->setFetchMode(\PDO::FETCH_CLASS|\PDO::FETCH_PROPS_LATE, User::class)
         ));
         return $req->fetch();
 
@@ -20,14 +20,15 @@ class SecurityManager extends Database
 
     }
 
-    public function addUser($email,$username,$password)
+    public function addUser(User $user)
     {
         $db = $this->dbConnect();
         $req = $db->prepare('INSERT INTO `users` (email, username, password) VALUES (:email, :username, :password);');
         $req->execute(array(
-            'email' => $email,
-            'username' => $username,
-            'password' => password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]),
+            $user->getUsername(),
+            $user->getPassword(),
+            $user->getEmail(),
+            $user->getRole()
 
         ));
 
