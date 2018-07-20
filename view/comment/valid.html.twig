@@ -3,8 +3,17 @@
 {% block body %}
 
 
-    <a href="index.php?c=comment&t=validComment&params[id]={{ comment_id }}">VALIDE</a>
+
+Voulez vous valider le commentaire?
+    <form method="POST">
+        <input type="hidden" name="token" value="{{ token }}">
+        <input type="radio" name="validComment">oui
+        <input type="radio" name="validComment">non
 
 
+        <button type="submit">
+            validez
+        </button>
+    </form>
 
 {% endblock %}

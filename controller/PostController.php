@@ -17,6 +17,7 @@ class PostController extends Controller
 
 
 
+
         $posts = $postManager->getPosts(); //  function call o this object
 
 
