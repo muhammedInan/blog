@@ -17,6 +17,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/style.css.twig">
 
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
 </head>
 <body>
@@ -35,13 +36,18 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li><a href="/blog2/?c=post&t=listPosts">Liste d'article</a></li>
-                <li><a href="/blog2/?c=post&t=updatePost&params[postId]"> modifier</a></li>
-                <li><a href="/blog2/?c=post&t=deletePost&params[postId]">Supprimer</a></li>
-                <li><a href="/blog2/?c=security&t=register">inscription</a></li>
-                <li> <a href="/blog2/?c=security&t=login">connexion</a></li>
+
+
                 <li class="nav-item  contact ">
                     <a href="/blog2/?c=default&t=contact" class="nav-link">Contact</a>
+                {% if (connected_user ) %}
+
                 <li> <a href="/blog2/?c=security&t=logout">deconnexion</a></li>
+                {% else %}
+                <li><a href="/blog2/?c=security&t=register">inscription</a></li>
+                <li> <a href="/blog2/?c=security&t=login">connexion</a></li>
+
+                {% endif %}
                 <li> <a href="/blog2/?c=post&t=addPost">Ajout</a></li>
                 <li> <a href="/blog2/">Accueil</a>
                 </li>
@@ -65,7 +71,8 @@
         <h6>Contactez-nous</h6>
     </footer>
 
-
+<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+<script>tinymce.init({ selector:'textarea' });</script>
 
 
         <!-- Optional JavaScript -->

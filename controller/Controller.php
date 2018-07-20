@@ -27,6 +27,7 @@ class Controller
         $content = new Twig_Environment($loader, array(
             'cache' => false,
         ));
+        $parameters['connected_user']= $this-> getUser();
         $flash = $this->getSession()->getFlash();
         if ($flash && $flash['status'] == false) {
 
@@ -91,4 +92,6 @@ class Controller
         }
         return false;
     }
+
+
 }

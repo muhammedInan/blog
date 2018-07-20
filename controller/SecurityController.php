@@ -1,6 +1,6 @@
 <?php
 
-
+use Models\Entity\User;
 
 namespace Controllers;
 
@@ -15,7 +15,7 @@ class SecurityController extends Controller
             $securityManager = new \Models\SecurityManager();
             $user =  $securityManager->verifyUser($_POST['login']);
 
-            if (password_verify($_POST['password'], $user['password'])) {
+            if (password_verify($_POST['password'], $user->password)) {
                 $session = $this->getSession();
                 $session->setUser($user);
                 $this->addFlash('success','vous êtes bien authentifier');
@@ -36,9 +36,16 @@ class SecurityController extends Controller
 
     public function register()
     {
+        $securityManager = new \Models\SecurityManager();
         if ('POST' === $_SERVER['REQUEST_METHOD'] && $this->verifyToken($_POST['token'])) {
-            $securityManager = new \Models\SecurityManager();
-            $securityManager->addUser($_POST['email'], $_POST['username'], $_POST['password']);
+            $user = new User([
+                'username' =>$_POST['username'],
+                'password' =>$_POST['password'],
+                'email' =>$_POST['email'],
+                'role' =>$_POST['role'],
+
+            ]);
+            $securityManager->addUser($user);
 
             return $this->generateUrlRedirection('security', 'login');
         }

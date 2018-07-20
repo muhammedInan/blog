@@ -18,7 +18,7 @@ class Session
 
         return self::$session;
     }
-
+//construct fot method ant parameters
     public function __call($method, $parameters)
     {
         $name = strtolower(substr($method, 3));
@@ -31,7 +31,7 @@ class Session
             $_SESSION[$name] = $parameters[0];
         }
     }
-
+// for start a session
     public function start()
     {
         if (!$this->isStarted) {
@@ -39,7 +39,7 @@ class Session
             $this->isStarted = true;
         }
     }
-
+// function for exit session logout
     public function destroy()
     {
         if ($this->isStarted) {
