@@ -1,7 +1,7 @@
 <?php
 /*class CommentManager*/
 namespace Models;
-
+use Models\Entity\User;
 
 class SecurityManager extends Database
 {
@@ -9,11 +9,14 @@ class SecurityManager extends Database
     {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT * FROM `users` WHERE (username = :login OR email = :login)');
+
+
         $req->execute(array(
             'login'=>$login,
 
-            $req->setFetchMode(\PDO::FETCH_CLASS|\PDO::FETCH_PROPS_LATE, User::class)
+
         ));
+        $req->setFetchMode(\PDO::FETCH_CLASS|\PDO::FETCH_PROPS_LATE, User::class);
         return $req->fetch();
 
 
