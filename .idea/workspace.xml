@@ -4,99 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/controller/PostController.php" line="33" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6926ce3-cdba-4e9a-85e7-95c87debe435" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/blog2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blog2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/captcha/GoogleRecaptcha.php" beforeDir="false" afterPath="$PROJECT_DIR$/captcha/GoogleRecaptcha.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/Session.php" beforeDir="false" afterPath="$PROJECT_DIR$/component/Session.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/CommentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css.twig" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/CommentManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/CommentManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/PostManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/PostManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/SecurityManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/SecurityManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/entity/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/entity/Comment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/entity/Media.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/entity/Media.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/entity/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/entity/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/CHANGELOG" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/CHANGELOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/README.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/README.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/advanced.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/advanced.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/deprecated.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/deprecated.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/abs.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/abs.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/convert_encoding.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/convert_encoding.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/date.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/date.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/date_modify.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/date_modify.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/escape.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/escape.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/first.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/first.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/format.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/format.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/json_encode.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/json_encode.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/last.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/last.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/merge.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/merge.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/number_format.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/number_format.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/reverse.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/reverse.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/slice.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/slice.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/sort.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/sort.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/split.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/split.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/striptags.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/striptags.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/trim.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/trim.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/url_encode.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/filters/url_encode.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/functions/date.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/functions/date.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/functions/dump.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/functions/dump.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/functions/random.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/functions/random.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/functions/range.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/functions/range.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/installation.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/installation.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/recipes.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/recipes.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/tags/embed.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/tags/embed.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/tags/flush.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/tags/flush.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/tags/if.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/tags/if.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/templates.rst" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/templates.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Environment.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Environment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/ExpressionParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/ExpressionParser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Extension/Core.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Extension/Core.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Filter.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Filter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Function.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Function.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Loader/Filesystem.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Loader/Filesystem.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Expression/Call.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Expression/Call.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Expression/Name.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Expression/Name.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Module.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Module.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Spaceless.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Spaceless.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/With.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/With.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/NodeTraverser.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/NodeTraverser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Parser.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Parser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Test.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Test.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Test/IntegrationTestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Test/IntegrationTestCase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Token.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Token.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenParser/Sandbox.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenParser/Sandbox.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenParser/Use.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenParser/Use.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/EnvironmentTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/EnvironmentTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/autoescape/name.test" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/autoescape/name.test" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/filters/escape_javascript.test" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/filters/escape_javascript.test" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/filters/force_escape.test" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/filters/force_escape.test" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/tags/autoescape/functions.test" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/tags/autoescape/functions.test" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/tags/autoescape/strategy.test" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/tags/autoescape/strategy.test" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/tags/autoescape/type.test" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/tags/autoescape/type.test" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/LegacyFixtures/autoescape/filename.legacy.test" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/LegacyFixtures/functions/undefined_block.legacy.test" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Node/Expression/FilterTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Node/Expression/FilterTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/escapingTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/escapingTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/view/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/comment/valid.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/view/comment/valid.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/view/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/post/addpost.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/view/post/addpost.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/post/listPosts.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/view/post/listPosts.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/post/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/view/post/show.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="f6926ce3-cdba-4e9a-85e7-95c87debe435" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +20,7 @@
       <file leaf-file-name="PostController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/PostController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1224">
+            <state relative-caret-position="1360">
               <caret line="80" selection-start-line="80" selection-end-line="80" />
             </state>
           </provider>
@@ -121,7 +29,7 @@
       <file leaf-file-name="PostManager.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/PostManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="170">
               <caret line="11" column="88" selection-start-line="11" selection-start-column="88" selection-end-line="11" selection-end-column="88" />
               <folding>
                 <element signature="e#24#47#0#PHP" expanded="true" />
@@ -151,17 +59,17 @@
       <file leaf-file-name="addpost.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/post/addpost.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
+            <state relative-caret-position="391">
               <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SecurityController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SecurityController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/SecurityController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="221">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
               <folding>
                 <element signature="e#29#52#0#PHP" expanded="true" />
               </folding>
@@ -169,20 +77,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommentManager.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/CommentManager.php">
+      <file leaf-file-name="Post.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/model/entity/Post.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
+            <state relative-caret-position="68">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Database.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/Database.php">
+      <file leaf-file-name="CommentManager.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/CommentManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+            <state relative-caret-position="697">
+              <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -199,7 +107,7 @@
       <file leaf-file-name="SecurityManager.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/SecurityManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="408">
               <caret line="24" column="46" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
             </state>
           </provider>
@@ -283,7 +191,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="642" />
     <option name="y" value="25" />
     <option name="width" value="883" />
@@ -564,16 +472,17 @@
       <workItem from="1532955685087" duration="1322000" />
       <workItem from="1532957459091" duration="1781000" />
       <workItem from="1532959285050" duration="1760000" />
+      <workItem from="1532973824767" duration="1654000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253032000" />
+    <option name="totallyTimeSpent" value="254686000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17030849" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15424165" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -582,7 +491,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.2195122" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.20189703" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -597,19 +506,19 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30205655" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3292683" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.30352303" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -858,13 +767,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/entity/Post.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/Database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -881,28 +783,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/model/SecurityManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="408">
           <caret line="24" column="46" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/post/addpost.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
+        <state relative-caret-position="391">
           <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/CommentManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
+        <state relative-caret-position="697">
           <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/PostManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="170">
           <caret line="11" column="88" selection-start-line="11" selection-start-column="88" selection-end-line="11" selection-end-column="88" />
           <folding>
             <element signature="e#24#47#0#PHP" expanded="true" />
@@ -912,7 +814,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/PostController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
+        <state relative-caret-position="1360">
           <caret line="80" selection-start-line="80" selection-end-line="80" />
         </state>
       </provider>
@@ -933,11 +835,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/SecurityController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="221">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="e#29#52#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/entity/Post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
