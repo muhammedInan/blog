@@ -18,70 +18,39 @@ class User
     protected $role;
 
 
-     public function __construct($valeurs = [])
-     {
-         //if specified the values then we hydrate object
-         if (!empty($valeurs)) {
-             $this->hydrate($valeurs);
-
-         }
-     }
-
-       /**
-        * Méthode assignant les valeurs spécifiées aux attributs correspondant.
-        * @param $donnees array Les données à assigner
-        * @return void
-        */
-  public function hydrate($donnees)
-  {
-      foreach ($donnees as $attribut => $valeur)
-      {
-          $methode = 'set'.ucfirst($attribut);
-
-          if (is_callable([$this, $methode]))
-          {
-              $this->$methode($valeur);
-          }
-      }
-  }
-
-    public function setId($id)
+    public function __construct($valeurs = [])
     {
-        $this->id = (int) $id;
-    }
+        //if specified the values then we hydrate object
+        if (!empty($valeurs)) {
+            $this->hydrate($valeurs);
 
-    public function setUsername($username)
-
-
-        {
-            $this->username = $username;
         }
+    }
 
+    /**
+     * Méthode assignant les valeurs spécifiées aux attributs correspondant.
+     * @param $donnees array Les données à assigner
+     * @return void
+     */
+    public function hydrate($donnees)
+    {
+        foreach ($donnees as $attribut => $valeur) {
+            $methode = 'set' . ucfirst($attribut);
 
-
-
-    public function setPassword($password)
-
-
-        {
-            $this->password = $password;
+            if (is_callable([$this, $methode])) {
+                $this->$methode($valeur);
+            }
         }
-
-
-    public function setEmail($email)
-    {
-        $this->email = $email;
     }
 
-    public function setRole($role)
-    {
-        $this->role = $role;
-    }
-
-    // GETTERS //
     public function getId()
     {
         return $this->id;
+    }
+
+    public function setId($id)
+    {
+        $this->id = (int)$id;
     }
 
     public function getUsername()
@@ -89,9 +58,25 @@ class User
         return $this->username;
     }
 
+    public function setUsername($username)
+
+
+    {
+        $this->username = $username;
+    }
+
     public function getPassword()
     {
         return $this->password;
+    }
+
+    // GETTERS //
+
+    public function setPassword($password)
+
+
+    {
+        $this->password = $password;
     }
 
     public function getEmail()
@@ -99,12 +84,20 @@ class User
         return $this->email;
     }
 
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
     public function getRole()
     {
         return $this->role;
     }
 
+    public function setRole($role)
+    {
+        $this->role = $role;
+    }
 
-}
 
 }

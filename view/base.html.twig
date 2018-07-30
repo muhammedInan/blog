@@ -18,6 +18,7 @@
     <link type="text/css" rel="stylesheet" href="css/style.css.twig">
 
     <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
 
 </head>
 <body>
@@ -35,31 +36,33 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="/blog2/?c=post&t=listPosts">Liste d'article</a></li>
+                <li><a href="?c=post&t=listPosts">Liste d'article</a></li>
 
 
                 <li class="nav-item  contact ">
-                    <a href="/blog2/?c=default&t=contact" class="nav-link">Contact</a>
+                    <a href="?c=default&t=contact" class="nav-link">Contact</a>
                 {% if (connected_user ) %}
 
-                <li> <a href="/blog2/?c=security&t=logout">deconnexion</a></li>
+                <li> <a href="?c=security&t=logout">deconnexion</a></li>
                 {% else %}
-                <li><a href="/blog2/?c=security&t=register">inscription</a></li>
-                <li> <a href="/blog2/?c=security&t=login">connexion</a></li>
+                <li><a href="?c=security&t=register">inscription</a></li>
+                <li> <a href="?c=security&t=login">connexion</a></li>
+
 
                 {% endif %}
-                <li> <a href="/blog2/?c=post&t=addPost">Ajout</a></li>
-                <li> <a href="/blog2/">Accueil</a>
+                <li> <a href="?c=post&t=addPost">Ajout</a></li>
+                <li> <a href="index.php">Accueil</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-<section  class="wrapper">
+<section  class="wrapper container" >
 
 {% if (flash)%}
     {{ flash.message }}
 {% endif %}
+
         {% block body %}{% endblock %}
 
 </section>
@@ -71,8 +74,7 @@
         <h6>Contactez-nous</h6>
     </footer>
 
-<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-<script>tinymce.init({ selector:'textarea' });</script>
+
 
 
         <!-- Optional JavaScript -->

@@ -11,46 +11,41 @@ namespace Models\entity;
 
 class Media
 {
-  protected $id;
-            $name;
-            $file;
-            $postId;
-            $type;
+    protected $id,
+        $name,
+        $file,
+        $postId,
+        $type;
 
 
-     public function __construct($valeurs = [])
-     {
-         //if specified the values then we hydrate object
-         if (!empty($valeurs)) {
-             $this->hydrate($valeurs);
-
-         }
-     }
-
-       /**
-        * Méthode assignant les valeurs spécifiées aux attributs correspondant.
-        * @param $donnees array Les données à assigner
-        * @return void
-        */
-  public function hydrate($donnees)
-  {
-      foreach ($donnees as $attribut => $valeur) {
-          $methode = 'set' . ucfirst($attribut);
-
-          if (is_callable([$this, $methode])) {
-              $this->$methode($valeur);
-          }
-      }
-
-
-  }
-
-   // SETTERS //
-
-    public function setId($id)
+    public function __construct($valeurs = [])
     {
-        $this->id = (int)$id;
+        //if specified the values then we hydrate object
+        if (!empty($valeurs)) {
+            $this->hydrate($valeurs);
+
+        }
     }
+
+    /**
+     * Méthode assignant les valeurs spécifiées aux attributs correspondant.
+     * @param $donnees array Les données à assigner
+     * @return void
+     */
+    public function hydrate($donnees)
+    {
+        foreach ($donnees as $attribut => $valeur) {
+            $methode = 'set' . ucfirst($attribut);
+
+            if (is_callable([$this, $methode])) {
+                $this->$methode($valeur);
+            }
+        }
+
+
+    }
+
+    // SETTERS //
 
     public function setName($name)
 
@@ -59,31 +54,34 @@ class Media
         $this->name = $name;
     }
 
-
     public function setFile($file)
 
 
-        {
-            $this->file = $file;
-        }
-
+    {
+        $this->file = $file;
+    }
 
     public function setPostId($postId)
 
-         {
-            $this->postId = $postId;
-        }
-
+    {
+        $this->postId = $postId;
+    }
 
     public function setType($type)
     {
         $this->type = $type;
     }
 
-    // GETTERS //
     public function getId()
     {
         return $this->id;
+    }
+
+    // GETTERS //
+
+    public function setId($id)
+    {
+        $this->id = (int)$id;
     }
 
     public function getName()

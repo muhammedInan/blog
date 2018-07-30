@@ -23,27 +23,28 @@ class Controller
     public function render($view,$parameters = array())
     {
         // Twig Configuration
-        $loader = new Twig_Loader_Filesystem('./view/');
+        $loader = new Twig_Loader_Filesystem('./view/');// demande ou sont les vues twig
         $content = new Twig_Environment($loader, array(
             'cache' => false,
         ));
-        $parameters['connected_user']= $this-> getUser();
+        $parameters['connected_user']= $this-> getUser();// recuperer dans les vues l'utilisateur conneter
         $flash = $this->getSession()->getFlash();
         if ($flash && $flash['status'] == false) {
 
             $parameters['flash'] = $flash;
-            $flash['status'] = true;
+            $flash['status'] = true;//elle a etait vue
             $this->getSession()->setFlash($flash);
         }
         //
         echo $content->render($view,$parameters);
     }
+//lancer une session
 
     public function getSession()
     {
         return Session::getSession();
     }
-
+//permet de recuperer lutilisateur connecte
     public function getUser()
     {
         return $this->getSession()->getUser();

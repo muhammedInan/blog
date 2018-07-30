@@ -22,5 +22,8 @@
 
     {% for comment in comments %}
     {{ comment.comment }}
+        {% if (connected_user.role == 'ADMIN') %}
+            <li> <a href="index.php?c=comment&t=validComment&params[id]={{ comment.id }}">modérer le commentaire</a></li>
+        {% endif %}
     {% endfor %}
 {% endblock %}

@@ -7,34 +7,43 @@
  */
 
 namespace Controllers;
-
+/**
+ * Class CommentController
+ * @package Controllers
+ * this class allows occupied the part Commment in the mvc only for valid a comment with function
+ */
 class CommentController extends Controller
 {
+
     function validComment($id)
     {
-         if ($this->getUser()) {
-
-
-             if (isset($_POST['valider'])) //if we request valid a comment
-             {
-                 //  so we valid the comment corresponding
-                 // we protected the "valid" variable for to avoid a error SQL
-                 $_POST['valider'] = htmlspecialchars($_POST['valider']);
-                 $commentManager = new \Models\CommentManager();
-                 $commentManager->confirmComment($id, $_POST['valider']);
+        $user = $this->getUser();
+         if ($user) {
+            if ($user->getRole() == 'ADMIN') {
+                if ('POST' === $_SERVER['REQUEST_METHOD'] && $this->verifyToken($_POST['token'])) {
 
 
 
-             }
-             return $this->render('comment/valid.html.twig', array(
-                 'comment_id' => $id,
-             ));
+                    //  so we valid the comment corresponding
+                    // we protected the "valid" variable for to avoid a error SQL
+                    $_POST['validComment'] = (($_POST['validComment'] == 'on') ? true : false );
+                    $commentManager = new \Models\CommentManager();
+                    $commentManager->confirmComment( $id,$_POST['validComment']);
+                  //  return $this->generateUrlRedirection('post','showpost');
+
+                }
+                return $this->render('comment/valid.html.twig', array(
+                    'token' => $this->generateToken(),
+                ));
+            }
          }
          else
          {
              return $this->generateUrlRedirection('security','login');
 
          }
+
+
 
 
     }

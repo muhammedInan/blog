@@ -7,6 +7,7 @@ namespace Composer\Autoload;
 class ComposerStaticInit13825d97f3af4c9e2b3bafb62fea2ac6
 {
     public static $files = array (
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
     );
 
@@ -18,6 +19,7 @@ class ComposerStaticInit13825d97f3af4c9e2b3bafb62fea2ac6
         'S' => 
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Polyfill\\Ctype\\' => 23,
         ),
         'M' => 
         array (
@@ -27,6 +29,7 @@ class ComposerStaticInit13825d97f3af4c9e2b3bafb62fea2ac6
         array (
             'Controllers\\' => 12,
             'Components\\' => 11,
+            'Captcha\\' => 8,
         ),
     );
 
@@ -39,6 +42,10 @@ class ComposerStaticInit13825d97f3af4c9e2b3bafb62fea2ac6
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
         ),
+        'Symfony\\Polyfill\\Ctype\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
+        ),
         'Models\\' => 
         array (
             0 => __DIR__ . '/../..' . '/model',
@@ -50,6 +57,10 @@ class ComposerStaticInit13825d97f3af4c9e2b3bafb62fea2ac6
         'Components\\' => 
         array (
             0 => __DIR__ . '/../..' . '/component',
+        ),
+        'Captcha\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/captcha',
         ),
     );
 

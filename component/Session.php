@@ -1,20 +1,32 @@
 <?php
 
 namespace Components;
-
+/**
+ * Class Session
+ * @package Components
+ * class Session is for activ session for user and start and destroy after this the user quit the blog
+ */
 class Session
 {
     public static $session;
 
     private $isStarted = false;
-//récuperer la session active ,
+
+
+
+    /**
+     * @return Session
+     * recovered the activ session with get
+     */
     public static function getSession()
     {
-        //on instancie 1 seul session pour toute l'application
+
+        // we instantiate only one session for all application
         if (!self::$session) {
             self::$session = new self;
         }
-// on demarre la session
+
+        // we start a session
         self::$session->start();
 
         return self::$session;
@@ -25,13 +37,22 @@ class Session
 //$session->setUser($user);
 
 
+    /**
+     * @param $method
+     * @param $parameters
+     * @return mixed
+     * function who executed for every call object
+     */
     public function __call($method, $parameters)
     {
-        //retire les 3 premier caracteres de $method , strolower = minuscule
+
+        // we took of 3 first caracter of $method    strolower = minuscule
         $name = strtolower(substr($method, 3));
-        // on verifie si $method commence par get
+
+        //verified if $method begin by get
         if (!strncasecmp($method, 'get', 3)) {
-            // on verifie sdans la variable session si id existe
+
+            //verified in the variable session if id exist
             if (isset($_SESSION[$name])) {
                 return $_SESSION[$name];
             }
@@ -40,7 +61,11 @@ class Session
             $_SESSION[$name] = $parameters[0];
         }
     }
-// for start a session
+
+
+    /**
+     * for start a session
+     */
     public function start()
     {
         if (!$this->isStarted) {
@@ -48,7 +73,11 @@ class Session
             $this->isStarted = true;
         }
     }
-// function for exit session logout
+
+
+    /**
+     * function for exit session logout
+     */
     public function destroy()
     {
         if ($this->isStarted) {
