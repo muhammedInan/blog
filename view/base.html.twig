@@ -2,21 +2,19 @@
 <html lang="en">
 <head>
     <!-- Required meta tags -->
-
-
     <!-- Bootstrap CSS -->
     <title> Blog</title>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/style.css.twig">
-
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
 
@@ -24,7 +22,6 @@
 <body>
 
 <nav class="navbar navbar-default navbar-fixed-top">
-
     <div class="container">
         <h1> Blog </h1>
         <div class="navbar-header">
@@ -37,51 +34,51 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li><a href="?c=post&t=listPosts">Liste d'article</a></li>
-
-
                 <li class="nav-item  contact ">
                     <a href="?c=default&t=contact" class="nav-link">Contact</a>
-                {% if (connected_user ) %}
-
-                <li> <a href="?c=security&t=logout">deconnexion</a></li>
+                    {% if (connected_user ) %}
+                <li><a href="?c=security&t=logout">deconnexion</a></li>
                 {% else %}
-                <li><a href="?c=security&t=register">inscription</a></li>
-                <li> <a href="?c=security&t=login">connexion</a></li>
-
-
+                    <li><a href="?c=security&t=register">inscription</a></li>
+                    <li><a href="?c=security&t=login">connexion</a></li>
                 {% endif %}
-                <li> <a href="?c=post&t=addPost">Ajout</a></li>
-                <li> <a href="index.php">Accueil</a>
+                <li><a href="?c=post&t=addPost">Ajout</a></li>
+                <li><a href="index.php">Accueil</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-<section  class="wrapper container" >
+<section class="wrapper container">
 
-{% if (flash)%}
-    {{ flash.message }}
-{% endif %}
+    {% if (flash) %}
+        {{ flash.message }}
+    {% endif %}
 
-        {% block body %}{% endblock %}
+    {% block body %}{% endblock %}
 
 </section>
-    <footer class="text-center">
-        <a href="accueil">
-            <span class="glyphicon glyphicon-chevron-up"></span>
-        </a>
-        <h5> 2018 Tous droits réservés- Politique de conidentialité</h5>
-        <h6>Contactez-nous</h6>
-    </footer>
+<footer class="text-center">
+    <a href="accueil">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
+    <h5> 2018 Tous droits réservés- Politique de conidentialité</h5>
+    <h6>Contactez-nous</h6>
+</footer>
 
 
-
-
-        <!-- Optional JavaScript -->
+<!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
 
 </body>
+
 </html>

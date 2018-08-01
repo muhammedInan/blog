@@ -21,12 +21,10 @@ use Components\Session;
  */
 class Controller
 {
-
-  public function clearflash()
-  {
-      $this->getSession()->setFlash(null);
-
-  }
+    public function clearflash()
+    {
+        $this->getSession()->setFlash(null);
+    }
 
     /**
      * @param $view
@@ -36,14 +34,14 @@ class Controller
      * @throws \Twig_Error_Syntax
      *this function allows load the file view correspond in the unction controller
      */
-    public function render($view,$parameters = array())
+    public function render($view, $parameters = array())
     {
         // Twig Configuration
         $loader = new Twig_Loader_Filesystem('./view/');// twig ask where is the twig views
         $content = new Twig_Environment($loader, array(
             'cache' => false,
         ));
-        $parameters['connected_user']= $this-> getUser();//  recovered in the views the users connected
+        $parameters['connected_user'] = $this->getUser();//  recovered in the views the users connected
         $flash = $this->getSession()->getFlash();
         if ($flash && $flash['status'] == false) {
 
@@ -52,9 +50,8 @@ class Controller
             $this->getSession()->setFlash($flash);
         }
         //
-        echo $content->render($view,$parameters);
+        echo $content->render($view, $parameters);
     }
-//lancer une session
 
     /**
      * @return Session
@@ -83,19 +80,18 @@ class Controller
      * @return bool
      * this function is for fetch a message after connexion success or failed for confirmed the user
      */
-    public function addFlash($code,$message,$status=false)
+    public function addFlash($code, $message, $status = false)
     {
-        $flash = array (
+        $flash = array(
             'code' => $code,
             'message' => $message,
             'status' => $status,
         );
-       if ($this->getSession()->setFlash($flash)) {
+        if ($this->getSession()->setFlash($flash)) {
 
-           return true;
-       }
-       else
-           return false;
+            return true;
+        } else
+            return false;
     }
 
     /**
@@ -106,12 +102,11 @@ class Controller
      */
     public function generateUrlRedirection(string $controller, string $method, array $getParameters = array())
     {
-
-        $url = 'index.php?c='.$controller.'&t='.$method;
+        $url = 'index.php?c=' . $controller . '&t=' . $method;
         foreach ($getParameters as $key => $value) {
-            $url .= '&params['.$key.']='.$value;
+            $url .= '&params[' . $key . ']=' . $value;
         }
-        header('Location: '.$url);
+        header('Location: ' . $url);
         exit();
     }
 
@@ -144,6 +139,4 @@ class Controller
         }
         return false;
     }
-
-
 }

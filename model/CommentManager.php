@@ -1,8 +1,9 @@
 <?php
 /*class CommentManager*/
-namespace Models;
-use Models\Entity\Comment;
 
+namespace Models;
+
+use Models\Entity\Comment;
 
 /**
  * Class CommentManager
@@ -38,14 +39,12 @@ class CommentManager extends Database
         $db = $this->dbConnect();
         $req = $db->prepare('INSERT INTO comment(post_id, author, comment, comment_date , published) VALUES(?, ?, ?, ?, ?)');
         $affectedLines = $req->execute(array(
-            $comment -> getPostId(),
+            $comment->getPostId(),
             $comment->getAuthor(),
             $comment->getComment(),
             $comment->getCommentDate(),
             $comment->getPublished(),
         ));
-
-
         return $affectedLines;
     }
 
@@ -55,21 +54,13 @@ class CommentManager extends Database
      * this function allows valid a comment by the users , it's called by the function valid comment in controller
      * we did a requete for valid so after valid we update published
      */
-    public function confirmComment($id,$valider)
+    public function confirmComment($id, $valider)
     {
         $db = $this->dbConnect();
         $req = $db->prepare('UPDATE comment SET published = :valider WHERE id = :id'); //we valid the comments)
         $req->execute(array(
-            'id'=> $id,
+            'id' => $id,
             'valider' => $valider,
         ));
-
-
     }
-
-
-
-
-
-
 }

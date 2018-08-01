@@ -1,19 +1,15 @@
 <?php
 
-
-
 require_once 'vendor/autoload.php';
 
 use Controllers\Controller;
+
 /* get c = le controller , get t = fonction */
 // we verify url in controller and fucntion
 if (isset($_GET['c']) && isset($_GET['t'])) {
-    $class = 'Controllers\\'.ucfirst($_GET['c']).'Controller';
+    $class = 'Controllers\\' . ucfirst($_GET['c']) . 'Controller';
     $target = $_GET['t'];
-
-
     $params = (isset($_GET['params'])) ? $_GET['params'] : array();
-
 
     if (class_exists($class, true)) {
         $class = new $class();
@@ -22,20 +18,14 @@ if (isset($_GET['c']) && isset($_GET['t'])) {
             exit();
         }
     }
-
 
     $controller = new Controller();
 
-echo '404';
-}
-
-
-else {
+    echo '404';
+} else {
     $class = 'Controllers\\DefaultController';
     $target = 'home';
-
     $params = (isset($_GET['params'])) ? $_GET['params'] : array();
-
 
     if (class_exists($class, true)) {
         $class = new $class();
@@ -44,6 +34,4 @@ else {
             exit();
         }
     }
-
-
 }

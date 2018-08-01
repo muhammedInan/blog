@@ -31,10 +31,7 @@ class Post
     {
         //if specified the values then we hydrate object
         if (!empty($valeurs)) {
-
-
             $this->hydrate($valeurs);
-
         }
     }
 
@@ -53,7 +50,6 @@ class Post
             }
         }
     }
-
 
     // SETTERS //
 
@@ -117,6 +113,4 @@ class Post
     {
         $this->user = $user;
     }
-
-
 }

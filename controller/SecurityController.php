@@ -1,5 +1,7 @@
 <?php
+
 namespace Controllers;
+
 use Models\Entity\User;
 use Captcha\GoogleRecaptcha;
 
@@ -19,28 +21,19 @@ class SecurityController extends Controller
      * condition if for verify password and session , user with set , if the 3 correspond it's success . we used addFlash for confirmed the succes or failef
      */
     public function login()
-
     {
         if ('POST' === $_SERVER['REQUEST_METHOD']) {
-
-            sleep(1); // Prévention brut force
+            sleep(1);
             $securityManager = new \Models\SecurityManager();
-            $user =  $securityManager->verifyUser($_POST['login']);// retourne la valeur
-
+            $user = $securityManager->verifyUser($_POST['login']);// retourne la valeur
             if (password_verify($_POST['password'], $user->getPassword())) {
                 $session = $this->getSession();
                 $session->setUser($user);
-                $this->addFlash('success','vous êtes bien authentifier');
-
-
-
+                $this->addFlash('success', 'vous êtes bien authentifier');
                 return $this->generateUrlRedirection('security', 'profile');
-
-
             }
-            $this->addFlash('danger','votre mot de passe  ou votre login sont  incorrect' );
+            $this->addFlash('danger', 'votre mot de passe  ou votre login sont  incorrect');
         }
-
         return $this->render('security/login.html.twig', array(
             'token' => $this->generateToken(),
         ));
@@ -61,21 +54,18 @@ class SecurityController extends Controller
         if ('POST' === $_SERVER['REQUEST_METHOD'] //vérifié si on est en méthode post
             && $this->verifyToken($_POST['token'])) { // permet de vérifier si le token envoyer  par le formulaire est le meme que dans la session
             $user = new User([
-                'username' =>$_POST['username'],
-                'password' =>$_POST['password'],
-                'email' =>$_POST['email'],
-                'role' =>$_POST['role'],
-
+                'username' => $_POST['username'],
+                'password' => $_POST['password'],
+                'email' => $_POST['email'],
+                'role' => $_POST['role'],
             ]);
             $securityManager->addUser($user);
-
             return $this->generateUrlRedirection('security', 'login');
         }
 
         return $this->render('security/register.html.twig', array(
             'token' => $this->generateToken(),
         ));
-
     }
 
     /**
@@ -86,16 +76,13 @@ class SecurityController extends Controller
      */
     public function profile()
     {
-
         $session = $this->getSession();
-        if ($session->getUser() !== null )
+        if ($session->getUser() !== null)
             return $this->render('security/profile.html.twig', array(
-            'user' => $this->getUser(),
+                'user' => $this->getUser(),
             ));
-
         else
             return $this->render('404.html.twig');
-
     }
 
     /**
@@ -107,9 +94,4 @@ class SecurityController extends Controller
         $session->destroy();
         return $this->generateUrlRedirection('security', 'login');
     }
-
-
-
-
-
 }

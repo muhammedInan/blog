@@ -1,6 +1,7 @@
 <?php
 
 namespace Components;
+
 /**
  * Class Session
  * @package Components
@@ -9,10 +10,7 @@ namespace Components;
 class Session
 {
     public static $session;
-
     private $isStarted = false;
-
-
 
     /**
      * @return Session
@@ -20,22 +18,18 @@ class Session
      */
     public static function getSession()
     {
-
         // we instantiate only one session for all application
         if (!self::$session) {
             self::$session = new self;
         }
-
         // we start a session
         self::$session->start();
-
         return self::$session;
     }
 //construct fot method ant parameters
 //on genere les geters et les setters
 //$session->getId();
 //$session->setUser($user);
-
 
     /**
      * @param $method
@@ -45,13 +39,10 @@ class Session
      */
     public function __call($method, $parameters)
     {
-
         // we took of 3 first caracter of $method    strolower = minuscule
         $name = strtolower(substr($method, 3));
-
         //verified if $method begin by get
         if (!strncasecmp($method, 'get', 3)) {
-
             //verified in the variable session if id exist
             if (isset($_SESSION[$name])) {
                 return $_SESSION[$name];
@@ -61,7 +52,6 @@ class Session
             $_SESSION[$name] = $parameters[0];
         }
     }
-
 
     /**
      * for start a session
@@ -74,7 +64,6 @@ class Session
             $this->isStarted = true;
         }
     }
-
 
     /**
      * function for exit session logout

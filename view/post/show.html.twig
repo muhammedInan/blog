@@ -1,29 +1,24 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-{{ post.content }}
+    {{ post.content | raw }}
     {{ post.title }}
     {{ post.creation_date_fr }}
-
-        <a href="index.php?c=post&t=deletePost&params[postId]={{ post.id }}&params[token]={{token}}">DELETE</a>
+    <a href="index.php?c=post&t=deletePost&params[postId]={{ post.id }}&params[token]={{ token }}">DELETE</a>
     <a href="index.php?c=post&t=updatePost&params[postId]={{ post.id }}">UPDATE</a>
-
-
     <form method="POST">
         <div class="form-group ">
             <textarea name="comment_content"> </textarea>
             <input type="hidden" name="token" value="{{ token }}">
             {{ form.input('author', 'auteur', null, {class: 'col-xs'}) }}
-
         </div>
         {{ form.textarea('comment', 'commentaire') }}
         <button type="submit" class="btn btn-primary">valider</button>
     </form>
-
     {% for comment in comments %}
-    {{ comment.comment }}
+        {{ comment.comment }}
         {% if (connected_user.role == 'ADMIN') %}
-            <li> <a href="index.php?c=comment&t=validComment&params[id]={{ comment.id }}">modérer le commentaire</a></li>
+            <li><a href="index.php?c=comment&t=validComment&params[id]={{ comment.id }}">modérer le commentaire</a></li>
         {% endif %}
     {% endfor %}
 {% endblock %}

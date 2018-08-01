@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-<h1>inscription</h1>
+    <h1>inscription</h1>
     <form method="POST">
         <input type="hidden" name="token" value="{{ token }}">
         <input type="email" name="email">
@@ -11,5 +11,4 @@
             Login
         </button>
     </form>
-
 {% endblock %}

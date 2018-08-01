@@ -7,6 +7,7 @@
  */
 
 namespace Controllers;
+
 /**
  * Class CommentController
  * @package Controllers
@@ -23,37 +24,23 @@ class CommentController extends Controller
     function validComment($id)
     {
         $user = $this->getUser();
-         if ($user) {
+        if ($user) {
             if ($user->getRole() == 'ADMIN') {
                 if ('POST' === $_SERVER['REQUEST_METHOD'] && $this->verifyToken($_POST['token'])) {
-
-
-
                     //  so we valid the comment corresponding
                     // we protected the "valid" variable for to avoid a error SQL
-                    $_POST['validComment'] = (($_POST['validComment'] == 'on') ? true : false );
+                    $_POST['validComment'] = (($_POST['validComment'] == 'on') ? true : false);
                     $commentManager = new \Models\CommentManager();
-                    $commentManager->confirmComment( $id,$_POST['validComment']);
-
-
+                    $commentManager->confirmComment($id, $_POST['validComment']);
                 }
                 return $this->render('comment/valid.html.twig', array(
                     'token' => $this->generateToken(),
                 ));
             }
-         }
-         else
-         {
-             return $this->generateUrlRedirection('security','login');
-
-         }
-
-
-
-
+        } else {
+            return $this->generateUrlRedirection('security', 'login');
+        }
     }
-
-
 }
 
 

@@ -1,6 +1,7 @@
 <?php
-/*class CommentManager*/
+
 namespace Models;
+
 use Models\Entity\User;
 
 /**
@@ -10,7 +11,6 @@ use Models\Entity\User;
  */
 class SecurityManager extends Database
 {
-
     /**
      * @param $login
      * @return mixed
@@ -21,13 +21,10 @@ class SecurityManager extends Database
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT * FROM `user` WHERE (username = :login OR email = :login)');
         $req->execute(array(
-            'login'=>$login,
+            'login' => $login,
         ));
-        $req->setFetchMode(\PDO::FETCH_CLASS|\PDO::FETCH_PROPS_LATE, User::class);
+        $req->setFetchMode(\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, User::class);
         return $req->fetch();
-
-
-
     }
 
     /**
@@ -43,10 +40,6 @@ class SecurityManager extends Database
             $user->getPassword(),
             $user->getEmail(),
             $user->getRole()
-
         ));
-
     }
-
-
 }

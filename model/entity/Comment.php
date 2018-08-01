@@ -34,7 +34,6 @@ class Comment
         //if specified the values then we hydrate object
         if (!empty($valeurs)) {
             $this->hydrate($valeurs);
-
         }
     }
 
@@ -88,7 +87,6 @@ class Comment
         $this->comment = $comment;
     }
 
-
     // GETTERS //
 
     public function getCommentDate()
@@ -120,6 +118,4 @@ class Comment
     {
         $this->published = $published;
     }
-
-
 }
