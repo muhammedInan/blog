@@ -8,7 +8,11 @@
 
 namespace Models\entity;
 
-
+/**
+ * Class User
+ * @package Models\entity
+ * class represent for sign in a blog for become users or admin for have privileged publied a blog
+ */
 class User
 {
     protected $id;
@@ -17,7 +21,12 @@ class User
     protected $email;
     protected $role;
 
-
+    /**
+     * Comment constructor.
+     * @param array $valeurs
+     * @param $valeurs array values for assigned
+     * construc of the class who assigned data specified in parameters from atribut correspond
+     */
     public function __construct($valeurs = [])
     {
         //if specified the values then we hydrate object
@@ -28,7 +37,7 @@ class User
     }
 
     /**
-     * Méthode assignant les valeurs spécifiées aux attributs correspondant.
+     * method assigned the values specified from correspond attributs
      * @param $donnees array Les données à assigner
      * @return void
      */
@@ -98,6 +107,4 @@ class User
     {
         $this->role = $role;
     }
-
-
 }

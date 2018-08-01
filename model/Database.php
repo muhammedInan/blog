@@ -1,6 +1,11 @@
 <?php
 
 namespace Models;
+/**
+ * Class Database
+ * @package Models
+ * this class is for connected in database localhost
+ */
 class Database
 {
     protected function dbConnect()

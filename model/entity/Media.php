@@ -8,7 +8,10 @@
 
 namespace Models\entity;
 
-
+/**
+ * Class Media
+ * @package Models\entity
+ */
 class Media
 {
     protected $id,
@@ -17,18 +20,22 @@ class Media
         $postId,
         $type;
 
-
+    /**
+     * Comment constructor.
+     * @param array $valeurs
+     * @param $valeurs array values for assigned
+     * construc of the class who assigned data specified in parameters from atribut correspond
+     */
     public function __construct($valeurs = [])
     {
         //if specified the values then we hydrate object
         if (!empty($valeurs)) {
             $this->hydrate($valeurs);
-
         }
     }
 
     /**
-     * Méthode assignant les valeurs spécifiées aux attributs correspondant.
+     * method assigned the values specified from correspond attributs
      * @param $donnees array Les données à assigner
      * @return void
      */
@@ -36,33 +43,25 @@ class Media
     {
         foreach ($donnees as $attribut => $valeur) {
             $methode = 'set' . ucfirst($attribut);
-
             if (is_callable([$this, $methode])) {
                 $this->$methode($valeur);
             }
         }
-
-
     }
 
     // SETTERS //
 
     public function setName($name)
-
-
     {
         $this->name = $name;
     }
 
     public function setFile($file)
-
-
     {
         $this->file = $file;
     }
 
     public function setPostId($postId)
-
     {
         $this->postId = $postId;
     }
@@ -103,6 +102,4 @@ class Media
     {
         return $this->type;
     }
-
-
 }

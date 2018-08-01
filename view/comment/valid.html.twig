@@ -1,19 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
-
-
-Voulez vous valider le commentaire?
+    Voulez vous valider le commentaire?
     <form method="POST">
         <input type="hidden" name="token" value="{{ token }}">
         <input type="radio" name="validComment" value="on">oui
         <input type="radio" name="validComment" value="off">non
-
-
         <button type="submit">
             validez
         </button>
     </form>
-
 {% endblock %}

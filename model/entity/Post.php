@@ -8,7 +8,11 @@
 
 namespace Models\Entity;
 
-
+/**
+ * Class Post
+ * @package Models\Entity
+ * class represent publied a post in the blog and too update , delete according to users
+ */
 class Post
 {
     protected $id;
@@ -17,20 +21,22 @@ class Post
     protected $creationDate;
     protected $user;
 
-
+    /**
+     * Comment constructor.
+     * @param array $valeurs
+     * @param $valeurs array values for assigned
+     * construc of the class who assigned data specified in parameters from atribut correspond
+     */
     public function __construct($valeurs = [])
     {
         //if specified the values then we hydrate object
         if (!empty($valeurs)) {
-
-
             $this->hydrate($valeurs);
-
         }
     }
 
     /**
-     * Méthode assignant les valeurs spécifiées aux attributs correspondant.
+     * method assigned the values specified from correspond attributs
      * @param $donnees array Les données à assigner
      * @return void
      */
@@ -44,7 +50,6 @@ class Post
             }
         }
     }
-
 
     // SETTERS //
 
@@ -108,6 +113,4 @@ class Post
     {
         $this->user = $user;
     }
-
-
 }
