@@ -14,7 +14,8 @@
         "psr-4": {
             "Components\\": "component/",
             "Controllers\\": "controller/",
-            "Models\\": "model/"
+            "Models\\": "model/",
+            "Captcha\\": "captcha/"
         }
     }
 }

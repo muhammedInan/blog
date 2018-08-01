@@ -21,7 +21,7 @@ class Comment
 
     public function __construct($valeurs = [])
     {
-        $valeurs['commentDate']= date('Y-m-d');
+        $valeurs['commentDate'] = date('Y-m-d');
         //if specified the values then we hydrate object
         if (!empty($valeurs)) {
             $this->hydrate($valeurs);
@@ -47,9 +47,19 @@ class Comment
 
     // SETTERS //
 
+    public function getId()
+    {
+        return $this->id;
+    }
+
     public function setId($id)
     {
         $this->id = (int)$id;
+    }
+
+    public function getPostId()
+    {
+        return $this->postId;
     }
 
     public function setPostId($postId)
@@ -59,68 +69,48 @@ class Comment
         $this->postId = $postId;
     }
 
- public function setAuthor($author)
- {
-     $this->author = $author;
- }
-
- public function setComment($comment)
- {
-     $this->comment = $comment;
- }
-
-
-    public function setCommentDate($commentDate)
-    {
-        $this->commentDate = $commentDate;
-    }
-
-    public function setPublished($published)
-    {
-        $this->published = $published;
-    }
-
-
-    // GETTERS //
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    public function getPostId()
-    {
-        return $this->postId;
-    }
-
     public function getComment()
     {
         return $this->comment;
     }
+
+    public function setComment($comment)
+    {
+        $this->comment = $comment;
+    }
+
+
+    // GETTERS //
 
     public function getCommentDate()
     {
         return $this->commentDate;
     }
 
+    public function setCommentDate($commentDate)
+    {
+        $this->commentDate = $commentDate;
+    }
+
     public function getAuthor()
     {
         return $this->author;
     }
+
+    public function setAuthor($author)
+    {
+        $this->author = $author;
+    }
+
     public function getPublished()
     {
         return $this->published;
     }
 
-
-
-
-
-
-
-
-
-
-
+    public function setPublished($published)
+    {
+        $this->published = $published;
+    }
 
 
 }

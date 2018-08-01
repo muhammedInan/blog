@@ -1,8 +1,7 @@
 <?php
-
-use Models\Entity\User;
-
 namespace Controllers;
+use Models\Entity\User;
+use Captcha\GoogleRecaptcha;
 
 
 class SecurityController extends Controller
@@ -11,11 +10,16 @@ class SecurityController extends Controller
 
     {
         if ('POST' === $_SERVER['REQUEST_METHOD']) {
+
+
+
+
+
             sleep(1); // Prévention brut force
             $securityManager = new \Models\SecurityManager();
-            $user =  $securityManager->verifyUser($_POST['login']);
+            $user =  $securityManager->verifyUser($_POST['login']);// retourne la valeur
 
-            if (password_verify($_POST['password'], $user->password)) {
+            if (password_verify($_POST['password'], $user->getPassword())) {
                 $session = $this->getSession();
                 $session->setUser($user);
                 $this->addFlash('success','vous êtes bien authentifier');
@@ -37,7 +41,8 @@ class SecurityController extends Controller
     public function register()
     {
         $securityManager = new \Models\SecurityManager();
-        if ('POST' === $_SERVER['REQUEST_METHOD'] && $this->verifyToken($_POST['token'])) {
+        if ('POST' === $_SERVER['REQUEST_METHOD'] //vérifié si on est en méthode post
+            && $this->verifyToken($_POST['token'])) { // permet de vérifier si le token envoyer  par le formulaire est le meme que dans la session
             $user = new User([
                 'username' =>$_POST['username'],
                 'password' =>$_POST['password'],
