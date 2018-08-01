@@ -3,8 +3,19 @@
 namespace Models;
 use Models\Entity\User;
 
+/**
+ * Class SecurityManager
+ * @package Models
+ * class represent security in the blog for recovered data in the class parents database
+ */
 class SecurityManager extends Database
 {
+
+    /**
+     * @param $login
+     * @return mixed
+     * function for verify the data of users
+     */
     public function verifyUser($login)
     {
         $db = $this->dbConnect();
@@ -19,6 +30,10 @@ class SecurityManager extends Database
 
     }
 
+    /**
+     * @param User $user
+     * function for create a new users called by the method register in securiy Controller
+     */
     public function addUser(User $user)
     {
         $db = $this->dbConnect();
