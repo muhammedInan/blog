@@ -65,6 +65,7 @@ class Session
 
     /**
      * for start a session
+     * with condition if not as start so begin start
      */
     public function start()
     {
@@ -77,6 +78,8 @@ class Session
 
     /**
      * function for exit session logout
+     * with condition if the session has start , so we call session destroy
+     * and return false isStarted for quit the session
      */
     public function destroy()
     {

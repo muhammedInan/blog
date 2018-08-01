@@ -8,19 +8,19 @@ use Models\Entity\Post;
 use Models\PostManager;
 use Models\Entity\Comment;
 
-/* the class PostController it's concerned the part post*/
+
 
 /**
  * Class PostController
  * @package Controllers
- *
+ the class PostController it's concerned the part post*
  */
 class PostController extends Controller
 {
     /** function listPosts it's for display all the post */
     public function listPosts()
     {
-        $postManager = new PostManager();
+        $postManager = new PostManager(); // create a new object
         $posts = $postManager->getPosts(); //  function call o this object
         return $this->render('post/listPosts.html.twig', array(
             'posts' => $posts,
@@ -29,20 +29,20 @@ class PostController extends Controller
     }
 
     /**
-     *
+     *this function allows of user add the post if it connected in session
      */
     public function addPost()
     {
 
         $session = Session::getSession();
         $user = $this->getUser();//utilisateur connecté
-        $postManager = new PostManager();
+        $postManager = new PostManager();// create new object
 
 
         if (isset ($user)) {
-            if ('POST' === $_SERVER['REQUEST_METHOD'] && $this->verifyToken($_POST['token'])) {
+            if ('POST' === $_SERVER['REQUEST_METHOD'] && $this->verifyToken($_POST['token'])) {  // it load 'post' and get so 2 times after this it enter in condition
 
-                $post = new Post ($_POST);
+                $post = new Post ($_POST);// transfer object so create a new object
                 $post->setUser($user);
 
 
@@ -59,7 +59,12 @@ class PostController extends Controller
         }
     }
 
-    /**function deletePost it's for delete a post */
+    /**f
+     * function deletePost it's for delete a post
+     * so it load get . after it enter in conidtion for create a new object array
+     * because for respect function construct and hydrate in entity
+     */
+
     public function deletePost($postId, $token)
     {
 
@@ -93,7 +98,11 @@ class PostController extends Controller
 
     }
 
-
+    /**
+     * @param $postId
+     * function allows update a post but only user connected can did with only her post and no other post of other user
+     * so we transfer object to views recupered by the model post mananager . else we returnss other page error 403
+     */
     public function updatePost($postId)
     {
 
@@ -126,7 +135,11 @@ class PostController extends Controller
 
     }
 
-    /** this function allows display  update post , add post , and comment */
+    /** this function allows display  update post , add post , and comment
+     * so it load get and post . after it enter in conidtion for create a new obkect array
+     * because for respect function construct and hydrate in entity
+     */
+
     public function showPost($postId)
     {
 

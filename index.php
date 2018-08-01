@@ -25,7 +25,7 @@ if (isset($_GET['c']) && isset($_GET['t'])) {
 
 
     $controller = new Controller();
-   // $controller->twig->render('error/404.html.twig');
+
 echo '404';
 }
 

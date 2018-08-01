@@ -3,17 +3,25 @@ namespace Controllers;
 use Models\Entity\User;
 use Captcha\GoogleRecaptcha;
 
-
+/**
+ * Class SecurityController
+ * @package Controllers
+ * this class allows use the unction for security blog for sign , register of users
+ * all the users must use this security for access security
+ */
 class SecurityController extends Controller
 {
+    /**
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Runtime
+     * @throws \Twig_Error_Syntax
+     * function for login after register , so it verified if the data of users correspond with the function verify user in post manager
+     * condition if for verify password and session , user with set , if the 3 correspond it's success . we used addFlash for confirmed the succes or failef
+     */
     public function login()
 
     {
         if ('POST' === $_SERVER['REQUEST_METHOD']) {
-
-
-
-
 
             sleep(1); // Prévention brut force
             $securityManager = new \Models\SecurityManager();
@@ -38,6 +46,15 @@ class SecurityController extends Controller
         ));
     }
 
+    /**
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Runtime
+     * @throws \Twig_Error_Syntax
+     * this function is for register in the blog if it want become admin
+     * so create a new object
+     * verified if its methode post and verified if the token is send by the form is the same that session
+     * we transfer the object a security manager with array function construct in entity
+     */
     public function register()
     {
         $securityManager = new \Models\SecurityManager();
@@ -65,6 +82,7 @@ class SecurityController extends Controller
      * @throws \Twig_Error_Loader
      * @throws \Twig_Error_Runtime
      * @throws \Twig_Error_Syntax
+     * function for user after connected so we verify with the $session
      */
     public function profile()
     {
@@ -80,6 +98,9 @@ class SecurityController extends Controller
 
     }
 
+    /**
+     * function for quit the session profile after connexion
+     */
     public function logout()
     {
         $session = $this->getSession();

@@ -14,7 +14,12 @@ namespace Controllers;
  */
 class CommentController extends Controller
 {
-
+    /**
+     * @param $id
+     * function validComment allows first all of recupered the variable user and compare with condition if user it's admin or not
+     * it load , valid comment boolean . we recupered the data on model confrim commment with parameters id .
+     * if ok we send the wiews valiid.html.twig else url redirection
+     */
     function validComment($id)
     {
         $user = $this->getUser();
@@ -29,7 +34,7 @@ class CommentController extends Controller
                     $_POST['validComment'] = (($_POST['validComment'] == 'on') ? true : false );
                     $commentManager = new \Models\CommentManager();
                     $commentManager->confirmComment( $id,$_POST['validComment']);
-                  //  return $this->generateUrlRedirection('post','showpost');
+
 
                 }
                 return $this->render('comment/valid.html.twig', array(

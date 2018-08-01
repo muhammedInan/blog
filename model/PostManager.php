@@ -44,7 +44,7 @@ class PostManager extends Database
     public function getPost($postId)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT post.id, title, content,   creation_date, user_id FROM post INNER JOIN `user` ON user_id = users.id  WHERE post.id = ?');
+        $req = $db->prepare('SELECT post.id, title, content, creation_date, user_id FROM post INNER JOIN `user` ON user_id = `user`.id  WHERE post.id = ?');
         $req->execute(array($postId));
 
         $post = $req->fetch();

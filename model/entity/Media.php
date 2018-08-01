@@ -8,7 +8,10 @@
 
 namespace Models\entity;
 
-
+/**
+ * Class Media
+ * @package Models\entity
+ */
 class Media
 {
     protected $id,
@@ -17,7 +20,12 @@ class Media
         $postId,
         $type;
 
-
+    /**
+     * Comment constructor.
+     * @param array $valeurs
+     * @param $valeurs array values for assigned
+     * construc of the class who assigned data specified in parameters from atribut correspond
+     */
     public function __construct($valeurs = [])
     {
         //if specified the values then we hydrate object
@@ -28,7 +36,7 @@ class Media
     }
 
     /**
-     * Méthode assignant les valeurs spécifiées aux attributs correspondant.
+     * method assigned the values specified from correspond attributs
      * @param $donnees array Les données à assigner
      * @return void
      */

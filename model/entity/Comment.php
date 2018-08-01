@@ -8,7 +8,11 @@
 
 namespace Models\Entity;
 
-
+/**
+ * Class Comment
+ * @package Models\Entity
+ * class represent comment for that all the users could comment a post
+ */
 class Comment
 {
     protected $id;
@@ -18,7 +22,12 @@ class Comment
     protected $commentDate;
     protected $published;
 
-
+    /**
+     * Comment constructor.
+     * @param array $valeurs
+     * @param $valeurs array values for assigned
+     * construc of the class who assigned data specified in parameters from atribut correspond
+     */
     public function __construct($valeurs = [])
     {
         $valeurs['commentDate'] = date('Y-m-d');
@@ -30,7 +39,7 @@ class Comment
     }
 
     /**
-     * Méthode assignant les valeurs spécifiées aux attributs correspondant.
+     * method assigned the values specified from correspond attributs
      * @param $donnees array Les données à assigner
      * @return void
      */
