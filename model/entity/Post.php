@@ -114,3 +114,4 @@ class Post
         $this->user = $user;
     }
 }
+

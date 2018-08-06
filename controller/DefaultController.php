@@ -2,6 +2,8 @@
 
 namespace Controllers;
 
+use Models\Entity\Contact;
+use Models\ContactManager;
 /**
  * defaultController
  * User: WIN10
@@ -27,6 +29,19 @@ class DefaultController extends Controller
      */
     public function contact()
     {
-        return $this->render('contact.twig', ['name' => 'Marc', 'email' => 'demo@demo.fr']);
+        if ('POST' === $_SERVER['REQUEST_METHOD'] && $this->verifyToken($_POST['token'])) {
+
+            $contact = new Contact([
+                'name' => $_POST['name'],
+                'email' => $_POST['email'],
+                'message' => $_POST['message'],
+            ]);// transfer object so create a new object
+            $contactManager = new ContactManager();
+            $contactManager->addContact($contact);
+        }
+
+        return $this->render('contact.html.twig', [
+            'token' => $this->generateToken(), //enregistrer un token dans variabel session pour identifier luser qui a demander le formulaire
+        ]);
     }
 }

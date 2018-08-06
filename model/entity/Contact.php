@@ -3,22 +3,23 @@
  * Created by PhpStorm.
  * User: WIN10
  * Date: 14/07/2018
- * Time: 17:17
+ * Time: 17:01
  */
 
-namespace Models\entity;
+namespace Models\Entity;
 
 /**
- * Class Media
- * @package Models\entity
+ * Class Comment
+ * @package Models\Entity
+ * class represent comment for that all the users could comment a post
  */
-class Media
+class Contact
 {
-    protected $id,
-        $name,
-        $file,
-        $postId,
-        $type;
+    protected $id;
+    protected $name;
+    protected $email;
+    protected $message;
+
 
     /**
      * Comment constructor.
@@ -28,6 +29,7 @@ class Media
      */
     public function __construct($valeurs = [])
     {
+        $valeurs['commentDate'] = date('Y-m-d');
         //if specified the values then we hydrate object
         if (!empty($valeurs)) {
             $this->hydrate($valeurs);
@@ -43,6 +45,7 @@ class Media
     {
         foreach ($donnees as $attribut => $valeur) {
             $methode = 'set' . ucfirst($attribut);
+
             if (is_callable([$this, $methode])) {
                 $this->$methode($valeur);
             }
@@ -51,32 +54,10 @@ class Media
 
     // SETTERS //
 
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
-    public function setFile($file)
-    {
-        $this->file = $file;
-    }
-
-    public function setPostId($postId)
-    {
-        $this->postId = $postId;
-    }
-
-    public function setType($type)
-    {
-        $this->type = $type;
-    }
-
     public function getId()
     {
         return $this->id;
     }
-
-    // GETTERS //
 
     public function setId($id)
     {
@@ -88,19 +69,31 @@ class Media
         return $this->name;
     }
 
-    public function getFile()
+    public function setName($name)
     {
-        return $this->file;
+        $this->name = $name;
     }
 
-    public function getPostId()
+    public function getEmail()
     {
-        return $this->postId;
+        return $this->email;
     }
 
-    public function getType()
+    public function setEmail($email)
     {
-        return $this->type;
+        $this->email = $email;
     }
+
+    // GETTERS //
+
+    public function getMessage()
+    {
+        return $this->message;
+    }
+
+    public function setMessage($message)
+    {
+        $this->message = $message;
+    }
+
 }
-
