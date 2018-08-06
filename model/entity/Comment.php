@@ -119,3 +119,4 @@ class Comment
         $this->published = $published;
     }
 }
+

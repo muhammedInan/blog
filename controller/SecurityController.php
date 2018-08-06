@@ -53,15 +53,19 @@ class SecurityController extends Controller
         $securityManager = new \Models\SecurityManager();
         if ('POST' === $_SERVER['REQUEST_METHOD'] //vérifié si on est en méthode post
             && $this->verifyToken($_POST['token'])) { // permet de vérifier si le token envoyer  par le formulaire est le meme que dans la session
+            $password = password_hash($_POST['password'], PASSWORD_BCRYPT, ['cost' => 12]);
             $user = new User([
                 'username' => $_POST['username'],
-                'password' => $_POST['password'],
+                'password' => $password,
                 'email' => $_POST['email'],
-                'role' => $_POST['role'],
+                'role' => 'ADMIN',
             ]);
             $securityManager->addUser($user);
+            $this->addFlash('success', 'vous êtes bien inscrit');
             return $this->generateUrlRedirection('security', 'login');
+            $this->addFlash('danger', 'erreur veuillez respecter les champs indiqué');
         }
+
 
         return $this->render('security/register.html.twig', array(
             'token' => $this->generateToken(),

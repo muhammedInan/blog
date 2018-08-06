@@ -34,12 +34,12 @@ class SecurityManager extends Database
     public function addUser(User $user)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('INSERT INTO `user` (email, username, password) VALUES (:email, :username, :password);');
+        $req = $db->prepare('INSERT INTO `user` (email, username, password, role) VALUES (:email, :username, :password , :role);');
         $req->execute(array(
-            $user->getUsername(),
-            $user->getPassword(),
-            $user->getEmail(),
-            $user->getRole()
+            'username' => $user->getUsername(),
+            'password' => $user->getPassword(),
+            'email' => $user->getEmail(),
+            'role' => $user->getRole()
         ));
     }
 }

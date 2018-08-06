@@ -20,3 +20,4 @@ class GoogleRecaptcha
         return $decode['success'];
     }
 }
+

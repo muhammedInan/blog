@@ -34,7 +34,7 @@ class Controller
      * @throws \Twig_Error_Syntax
      *this function allows load the file view correspond in the unction controller
      */
-    public function render($view, $parameters = array())
+    public function render($view, $parameters = array()) // d'appeller la vue et d'afficher
     {
         // Twig Configuration
         $loader = new Twig_Loader_Filesystem('./view/');// twig ask where is the twig views
@@ -100,7 +100,7 @@ class Controller
      * @param array $getParameters
      * used for call views
      */
-    public function generateUrlRedirection(string $controller, string $method, array $getParameters = array())
+    public function generateUrlRedirection(string $controller, string $method, array $getParameters = array())// redigerer une autre page
     {
         $url = 'index.php?c=' . $controller . '&t=' . $method;
         foreach ($getParameters as $key => $value) {
@@ -116,7 +116,7 @@ class Controller
      * this function generate string pseudo random
      * we use get session
      */
-    public function generateToken()
+    public function generateToken()//  enregistre le token en session et permet ensuite d'inclure dans le formulaire
     {
         $token = bin2hex(random_bytes(32));
         $this->getSession()->setToken($token);
@@ -129,7 +129,7 @@ class Controller
      * this function allows verified i pseudo random it's same or not
      * for this we did condition for verified seesion token and post token
      */
-    public function verifyToken($postToken)
+    public function verifyToken($postToken) // verifier si c'est le meme utilisateur token qui a demander le formulaire
     {
         $sessionToken = $this->getSession()->getToken();
         if (isset($sessionToken) AND isset($postToken) AND !empty($sessionToken) AND !empty($postToken)) {
@@ -140,3 +140,4 @@ class Controller
         return false;
     }
 }
+
