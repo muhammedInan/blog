@@ -6,6 +6,7 @@
     {{ post.creation_date_fr }}
     <a href="index.php?c=post&t=deletePost&params[postId]={{ post.id }}&params[token]={{ token }}">DELETE</a>
     <a href="index.php?c=post&t=updatePost&params[postId]={{ post.id }}">UPDATE</a>
+
     <form method="POST">
         <div class="form-group ">
             <textarea name="comment_content"> </textarea>

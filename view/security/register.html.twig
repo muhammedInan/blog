@@ -1,11 +1,14 @@
 {% extends 'base.html.twig' %}
+
+{% import 'form.twig' as form %}
+
 {% block body %}
     <h1>inscription</h1>
     <form method="POST">
         <input type="hidden" name="token" value="{{ token }}">
-        email <input type="email" name="email">
-        username<input type="text" name="username">
-        password <input type="password" name="password">
+        <input type="email" name="email" placeholder="email"></br>
+        <input type="text" name="username" placeholder="username"></br>
+        <input type="password" name="password" placeholder="password"></br>
         <div class="g-recaptcha" data-sitekey="6Lfzy2IUAAAAALqzjemiWWM8NTbH2ckFgK1CA1II"></div>
         <button type="submit">
             Login
