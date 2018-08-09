@@ -80,7 +80,7 @@ class PostManager extends Database
     public function addPost(Post $post)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare(' INSERT INTO `post`(`title`, `content`, `creation_date`, `user_id`) VALUES ( ?, ?,NOW(),?) ');
+        $req = $db->prepare('INSERT INTO `post`(`title`, `content`, `creation_date`, `user_id`) VALUES ( ?, ?,NOW(),?) ');
         $req->execute(array(
             $post->getTitle(),
             $post->getContent(),

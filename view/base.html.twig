@@ -38,11 +38,12 @@
                     <a href="?c=default&t=contact" class="nav-link">Contact</a>
                     {% if (connected_user ) %}
                 <li><a href="?c=security&t=logout">deconnexion</a></li>
+                <li><a href="?c=post&t=addPost">Ajout</a></li>
                 {% else %}
                     <li><a href="?c=security&t=register">inscription</a></li>
                     <li><a href="?c=security&t=login">connexion</a></li>
                 {% endif %}
-                <li><a href="?c=post&t=addPost">Ajout</a></li>
+
                 <li><a href="index.php">Accueil</a>
                 </li>
             </ul>
